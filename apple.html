@@ -8,11 +8,17 @@
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>仿苹果</title>
     <style type="text/css">
+    @font-face {
 
+        font-style:normal;
+        font-weight:200;
+        src:url("http://www.apple.com/wss/fonts/PingHei/v1/PingHei-light.woff") format("woff"), url("http://www.apple.com/wss/fonts/PingHei/v1/PingHei-light.ttf") format("truetype");
+        *src:url('');
+    }
     * {
         margin: 0;
         padding: 0;
-        font-family: arial;
+        font-family: PingHei;
     }
     
     .navbar.navbar-inverse {
@@ -102,7 +108,7 @@
     
     #foot li {
         list-style-type: none;
-        margin-top: 5px;
+        margin-top: 8px;
     }
     
     #foot>.menu {
