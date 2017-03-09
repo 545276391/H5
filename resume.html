@@ -1,0 +1,363 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name=”viewport” content=”width=device-width,initial-scale=1.0” />
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <title>个人简历</title>
+    <style type="text/css">
+    body {
+        background: url("image/photo-1488415032361-b7e238421f1a.jpg") no-repeat center center fixed;
+        background-size: 100% 100%;
+    }
+    
+    .navbar {
+        background-color: rgba(0, 0, 0, 0.1);
+        border: none;
+    }
+    
+    .navbar:hover {
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    #myslider {
+        margin: 0 10%;
+    }
+    
+    .carousel-indicators {
+        margin-bottom: -10px;
+    }
+    
+    #basic_information,
+    #ability,
+    #practice,
+    #hobby{
+        color: rgba(255, 255, 255, 0.8);
+        text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+    }
+    
+    .container {
+        background-color: rgba(0, 0, 0, 0.3);
+        width: 100%;
+    }
+    
+    .container:hover {
+        background-color: rgba(0, 0, 0, 0.5);
+        -webkit-box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+        box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+        color: rgba(255, 255, 255, 1);
+    }
+
+    #basic_information .ziliao ul {
+        list-style-type: none;
+    }
+    
+    #basic_information .divider {
+        width: 80%;
+    }
+    
+    #basic_information .jianjie {
+        padding: 0 10% 2% 10%;
+    }
+    
+    #basic_information .row li {
+        margin-left: -20px;
+    }
+    
+    /*@keyframes rotate {
+        0% {
+            -webkit-transform: rotate(0deg);
+            ;
+            -ms-transform: rotate(0deg);
+            ;
+            -o-transform: rotate(0deg);
+            ;
+            transform: rotate(0deg);
+            ;
+        }
+        25% {
+            -webkit-transform: rotate(90deg);
+            ;
+            -ms-transform: rotate(90deg);
+            ;
+            -o-transform: rotate(90deg);
+            ;
+            transform: rotate(90deg);
+            ;
+        }
+        50% {
+            -webkit-transform: rotate(180deg);
+            ;
+            -ms-transform: rotate(180deg);
+            ;
+            -o-transform: rotate(180deg);
+            ;
+            transform: rotate(180deg);
+            ;
+        }
+        75% {
+            -webkit-transform: rotate(270deg);
+            ;
+            -ms-transform: rotate(270deg);
+            ;
+            -o-transform: rotate(270deg);
+            ;
+            transform: rotate(270deg);
+            ;
+        }
+        100% {
+            -webkit-transform: rotate(360deg);
+            ;
+            -ms-transform: rotate(360deg);
+            ;
+            -o-transform: rotate(360deg);
+            ;
+            transform: rotate(360deg);
+            ;
+        }
+    }
+    
+    #aolei {
+        -webkit-animation-name: rotate;
+        -o-animation-name: rotate;
+        animation-name: rotate;
+        -webkit-transition-timing-function: linear;
+        -o-transition-timing-function: linear;
+        transition-timing-function: linear;
+        -webkit-animation-duration: 1s;
+        -o-animation-duration: 1s;
+        animation-duration: 1s;
+        -webkit-animation-iteration-count: infinite;
+        -o-animation-iteration-count: infinite;
+        animation-iteration-count: infinite;
+    }*/
+    #basic_information #aolei{
+        opacity: 0.1;
+    }
+    
+    #ability .nengli,#hobby .aihao{
+        padding: 10%;
+    }
+    
+    #ability .head-ability,#hobby .head-hobby{
+        padding-top: 43px;
+    }
+
+    #practice .head-practice {
+        padding-top:25px;
+        padding-bottom: 25px;
+    }
+    
+    #basic_information #photo {
+        position: absolute;
+        z-index: 1000;
+        top: 31px;
+        margin-left: 31px;
+        opacity: 0.9;
+    }
+    #practice ul{
+        list-style-type: none;
+    }
+
+    #practice li{
+        margin-left: -10px;
+    }
+
+    #practice .panel:hover {
+        -webkit-transition: 0.5s;
+        -o-transition: 0.5s;
+        transition: 0.5s;
+        -webkit-box-shadow: 5px 10px 5px rgba(0,0,0,0.9);
+        box-shadow: 5px 10px 5px rgba(0,0,0,0.9);
+    }
+    #practice img:hover{
+        opacity: 0.9;
+        -webkit-transition: 0.5s;
+        -o-transition: 0.5s;
+        transition: 0.5s;
+        -webkit-box-shadow: 5px 10px 5px rgba(0,0,0,0.9);
+        box-shadow: 5px 10px 5px rgba(0,0,0,0.9);
+    }
+    #practice .panel,#practice .panel-footer{
+        background-color: transparent;
+    }
+
+    @media(max-width:992px) {
+        #practice li{
+            margin-left: -40px;
+        }
+    }
+
+    @media(max-width:768px) {
+        #basic_information .row li {
+            margin-left: -40px;
+        }
+
+    }
+    </style>
+</head>
+
+<body>
+    <div class="navbar navbar-default navbar-inverse" role="navigation">
+        <div class="navbar-header">
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                <span class="sr-only">Toggle Navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="##" class="navbar-brand">Rio's Resume</a>
+        </div>
+        <div class="collapse navbar-collapse navbar-responsive-collapse navbar-right">
+            <ul class="nav navbar-nav">
+                <li><a href="##" data-target="#myslider" data-slide-to="0">基本资料</a></li>
+                <li><a href="##" data-target="#myslider" data-slide-to="1">相关能力</a></li>
+                <li><a href="##" data-target="#myslider" data-slide-to="2">相关实践</a></li>
+                <li><a href="##" data-target="#myslider" data-slide-to="3">兴趣爱好</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="carousel slide" id="myslider" data-ride="carousel">
+        <ul class="carousel-indicators">
+            <li class="active" data-target="#myslider" data-slide-to="0"></li>
+            <li data-target="#myslider" data-slide-to="1"></li>
+            <li data-target="#myslider" data-slide-to="2"></li>
+            <li data-target="#myslider" data-slide-to="3"></li>
+        </ul>
+        <div class="carousel-inner">
+            <div class="item active">
+                <div id="basic_information">
+                    <div class="container text-center">
+                        <div class="touxiang text">
+                            <img src="image/touxiang.png" alt="touxiang" id="photo" width="210px">
+                            <img src="image/aolei.png" alt="touxiangbg" width="272px" id="aolei">
+                        </div>
+                        <div class="ziliao">
+                            <div class="row">
+                                <ul>
+                                    <li class="h4 col-md-12">尹睿尧</li>
+                                    <li class="h4 col-md-12"><em>Rio Yin</em></li>
+                                    <li class="h4 col-md-6">当前地址：北京市朝阳区平乐园</li>
+                                    <li class="h4 col-md-6">手机：13241317810</li>
+                                    <li class="h4 col-md-6">电子邮箱：Ruiyao_yin@163.com</li>
+                                    <li class="h4 col-md-6">出生年月：1995.12</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <hr class="divider">
+                        <div class="jianjie">
+                            <h2>简 介</h2>
+                            <h4>在GitHub上晃荡两年，系统学习过C、C++、JAVA等各种编程语言及Android、IOS开发，最终对前端产生浓厚的兴趣和热情，希望成为一名出色的前端工程师，享受coding...</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div id="ability">
+                    <div class="container">
+                        <div class="head-ability text-center">
+                            <h3>相关能力</h3>
+                            <h3>Ability</h3>
+                        </div>
+                        <ul class="nengli">
+                            <li class="h4">熟练掌握HTML5、CSS3、JavaScript（jQuery）、bootstrap框架，具备较强仿站能力</li>
+                            <li class="h4">熟练掌握盒模型、常用布局以及浏览器和移动设备兼容性</li>
+                            <li class="h4">熟悉W3C标准与ES规范，熟悉Web语义化</li>
+                            <li class="h4">较熟练使用调试工具，能独立分析、解决和归纳问题</li>
+                            <li class="h4">较熟练使用git进行团队协同开发</li>
+                            <li class="h4">通过了CET-6，看得懂英语文档</li>
+                            <li class="h4">熟悉C、C++、Java、数据结构、数据库、IOS、Android开发等各个方面，并开发过相应项目</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div id="practice">
+                    <div class="container">
+                        <div class="head-practice text-center">
+                            <h3>相关实践(Practice)</h3>
+                        </div>
+                        <div class="row">
+                            <ul class="shijian">
+                                <li class="col-md-4">
+                                    <div class="panel panel-default">
+                                        <div class="panel-body">
+                                            <a href="http://htmlpreview.github.io/?https://github.com/RioYin/H5/blob/master/apple.html"><img src="image/fang_apple.png" alt="仿Apple官网" class="img-responsive"></a>
+                                        </div>
+                                        <div class="panel-footer">仿Apple（点图片预览，<a href="https://github.com/RioYin/H5/blob/master/apple.html" style="color:white">点此查看源码</a>）</div>
+                                    </div>
+                                </li>
+                                <li class="col-md-4">
+                                    <div class="panel panel-default">
+                                        <div class="panel-body">
+                                            <a href="http://codepen.io/RioYin/pen/gmarOM"><img src="image/fang_iwds.png" alt="仿IWDS" class="img-responsive"></a>
+                                        </div>
+                                        <div class="panel-footer">仿IWDS（点击图片查看源码及预览）</div>
+                                    </div>
+                                </li>
+                                <li class="col-md-4">
+                                    <div class="panel panel-default">
+                                        <div class="panel-body">
+                                            <a href="https://github.com/SSE-13/SSE_13081214"><img src="image/wanggeyouxi.png" alt="JS网格地图游戏" class="img-responsive"></a>
+                                        </div>
+                                        <div class="panel-footer">JS网格地图游戏（点击图片查看源码）</div>
+                                    </div>
+                                </li>
+                                <li class="col-md-4">
+                                    <div class="panel panel-default">
+                                        <div class="panel-body">
+                                            <a href="https://github.com/RioYin/Android/tree/master/Yugioh"><img src="image/Android_app.png" alt="Android APP开发" class="img-responsive"></a>
+                                        </div>
+                                        <div class="panel-footer">Android APP开发（点击图片查看源码）</div>
+                                    </div>
+                                </li>
+                                <li class="col-md-4">
+                                    <div class="panel panel-default">
+                                        <div class="panel-body">
+                                            <a href="https://github.com/RioYin/Android/tree/master/Yugioh"><img src="image/Java_weiqi.png" alt="Java简易围棋小游戏" class="img-responsive"></a>
+                                        </div>
+                                        <div class="panel-footer">Java简易围棋小游戏(点击图片查看源码)</div>
+                                    </div>
+                                </li>
+                                <li class="col-md-4">
+                                    <div class="panel panel-default">
+                                        <div class="panel-body">
+                                            <a href="https://github.com/RioYin/MySQL"><img src="image/MySQL_guanlixitong.png" alt="数据库-决斗管理系统" class="img-responsive"></a>
+                                        </div>
+                                        <div class="panel-footer">数据库-决斗管理系统(点击图片查看源码)</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div id="hobby">
+                    <div class="container">
+                        <div class="head-hobby text-center">
+                            <h3>兴趣爱好</h3>
+                            <h3>HOBBYS</h3>
+                        </div>
+                        <ol class="aihao">
+                            <li class="h4">敲代码————不是在敲代码，就是在敲代码的路上，老老实实敲代码才是王道</li>
+                            <li class="h4">逛知乎————一天不逛，浑身难受</li>
+                            <li class="h4">听音乐————唱了听听了唱，听听唱唱忧愁散</li>
+                            <li class="h4">剪视频————b站up主一枚，原创视频总点击量近10万，其中单个视频最高点击量2.1万</li>
+                            <li class="h4">写怪文————诗词古文均有涉猎，偶尔也会头脑发热，不料回头怪文成册</li>
+                            <li class="h4">挑战新事物————“人生的意义就在于不断挑战”，不知道是哪个名人说的，先挑战吧</li>
+                            <h4 class="text-right">————Rio Yin</h4>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="#myslider" class="carousel-control left" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+        <a href="#myslider" class="carousel-control right" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+    </div>
+    <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>
