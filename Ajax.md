@@ -358,3 +358,13 @@ $(document).ready(function(){
     echo $result;
   }
   ```
+
+* XHR2跨域处理
+在PHP中头部添加如下代码即可(仅适用于IE10+)：
+
+```
+header('Access-Control-Allow-Origin:*');
+header('Access-Control-Allow-Methods:POST,GET');
+header('Access-Control-Allow-Credentials:true'); 
+header("Content-Type: application/json;charset=utf-8"); 
+```
