@@ -230,42 +230,42 @@ $(document).ready(function(){
 	$("#search").click(function(){ 
 		$.ajax({ 
 		    type: "GET", 	
-			url: "http://127.0.0.1:8080/ajaxdemo/serverjson2.php?number=" + $("#keyword").val(),
-			dataType: "json",
-			success: function(data) {
-				if (data.success) { 
-					$("#searchResult").html(data.msg);
-				} else {
-					$("#searchResult").html("出现错误：" + data.msg);
-				}  
-			},
-			error: function(jqXHR){     
+		    url: "http://127.0.0.1:8080/ajaxdemo/serverjson2.php?number=" + $("#keyword").val(),
+		    dataType: "json",
+		    success: function(data) {
+			    if (data.success) { 
+				    $("#searchResult").html(data.msg);
+			    } else {
+			            $("#searchResult").html("出现错误：" + data.msg);
+			    }  
+		    },
+		    error: function(jqXHR){     
 			   alert("发生错误：" + jqXHR.status);  
-			},     
+		    },     
 		});
 	});
 	
 	$("#save").click(function(){ 
 		$.ajax({ 
 		    type: "POST", 	
-			url: "serverjson.php",
-			data: {
-				name: $("#staffName").val(), 
-				number: $("#staffNumber").val(), 
-				sex: $("#staffSex").val(), 
-				job: $("#staffJob").val()
-			},
-			dataType: "json",
-			success: function(data){
-				if (data.success) { 
-					$("#createResult").html(data.msg);
-				} else {
-					$("#createResult").html("出现错误：" + data.msg);
-				}  
-			},
-			error: function(jqXHR){     
-			   alert("发生错误：" + jqXHR.status);  
-			},     
+	            url: "serverjson.php",
+		    data: {
+			    name: $("#staffName").val(), 
+			    number: $("#staffNumber").val(), 
+			    sex: $("#staffSex").val(), 
+			    job: $("#staffJob").val()
+		    },
+		    dataType: "json",
+		    success: function(data){
+			    if (data.success) { 
+			    	    $("#createResult").html(data.msg);
+			    } else {
+				    $("#createResult").html("出现错误：" + data.msg);
+			    }  
+		    },
+		    error: function(jqXHR){     
+			    alert("发生错误：" + jqXHR.status);  
+		    },     
 		});
 	});
 });
@@ -281,43 +281,43 @@ $(document).ready(function(){
 	$("#search").click(function(){ 
 		$.ajax({ 
 		    type: "GET", 	
-			url: "http://127.0.0.1:8000/ajaxdemo/serverjsonp.php?number=" + $("#keyword").val(),
-			dataType: "jsonp",
-			jsonp: "callback",
-			success: function(data) {
-				if (data.success) {
-					$("#searchResult").html(data.msg);
-				} else {
-					$("#searchResult").html("出现错误：" + data.msg);
-				}  
-			},
-			error: function(jqXHR){     
+		    url: "http://127.0.0.1:8000/ajaxdemo/serverjsonp.php?number=" + $("#keyword").val(),
+		    dataType: "jsonp",
+		    jsonp: "callback",
+		    success: function(data) {
+			    if (data.success) {
+			    	    $("#searchResult").html(data.msg);
+			    } else {
+				    $("#searchResult").html("出现错误：" + data.msg);
+			    }  
+		    },
+		    error: function(jqXHR){     
 			   alert("发生错误：" + jqXHR.status);  
-			},     
+		    },     
 		});
 	});
 	
 	$("#save").click(function(){ 
 		$.ajax({ 
 		    type: "POST", 	
-			url: "http://127.0.0.1:8000/ajaxdemo/serverjsonp.php",
-			data: {
-				name: $("#staffName").val(), 
-				number: $("#staffNumber").val(), 
-				sex: $("#staffSex").val(), 
-				job: $("#staffJob").val()
-			},
-			dataType: "json",
-			success: function(data){
-				if (data.success) { 
-					$("#createResult").html(data.msg);
-				} else {
-					$("#createResult").html("出现错误：" + data.msg);
-				}  
-			},
-			error: function(jqXHR){     
+		    url: "http://127.0.0.1:8000/ajaxdemo/serverjsonp.php",
+		    data: {
+			    name: $("#staffName").val(), 
+			    number: $("#staffNumber").val(), 
+			    sex: $("#staffSex").val(), 
+			    job: $("#staffJob").val()
+		    },
+		    dataType: "json",
+		    success: function(data){
+		    	    if (data.success) { 
+			    	    $("#createResult").html(data.msg);
+			    } else {
+				    $("#createResult").html("出现错误：" + data.msg);
+			    }  
+		    },
+		    error: function(jqXHR){     
 			   alert("发生错误：" + jqXHR.status);  
-			},     
+		    },     
 		});
 	});
 });
