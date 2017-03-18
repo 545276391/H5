@@ -325,4 +325,36 @@ $(document).ready(function(){
 ```
 
 同时将PHP中有关代码进行改动：
-将`header("Content-Type: text/plain;charset=utf-8"); `注释掉，启用`header("Content-Type: application/json;charset=utf-8"); `
+* 1.将`header("Content-Type: text/plain;charset=utf-8"); `注释掉，启用`header("Content-Type: application/json;charset=utf-8"); `
+* 2.改写search方法：
+  
+  ```
+  function search(){
+	$jsonp = $_GET["callback"];
+	//检查是否有员工编号的参数
+	//isset检测变量是否设置；empty判断值为否为空
+	//超全局变量 $_GET 和 $_POST 用于收集表单数据
+	if (!isset($_GET["number"]) || empty($_GET["number"])) {
+		echo $jsonp . '({"success":false,"msg":"参数错误"})';
+		return;
+	}
+	//函数之外声明的变量拥有 Global 作用域，只能在函数以外进行访问。
+	//global 关键词用于访问函数内的全局变量
+	global $staff;
+	//获取number参数
+	$number = $_GET["number"];
+	$result = $jsonp . '({"success":false,"msg":"没有找到员工。"})';
+	
+	//遍历$staff多维数组，查找key值为number的员工是否存在，如果存在，则修改返回结果
+	foreach ($staff as $value) {
+		if ($value["number"] == $number) {
+			$result = $jsonp . '({"success":true,"msg":"找到员工：员工编号：' . $value["number"] .
+							'，员工姓名：' . $value["name"] . 
+							'，员工性别：' . $value["sex"] . 
+							'，员工职位：' . $value["job"] . '"})';
+			break;
+		}
+	}
+    echo $result;
+  }
+  ```
