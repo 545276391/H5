@@ -1,0 +1,211 @@
+.navbar.navbar-inverse {
+    border-radius: 0;
+}
+
+#head {
+    line-height: 50px;
+    font-size: 14px;
+}
+
+#head a {
+    color: white;
+}
+
+#head a:hover {
+    color: #ccc;
+    text-decoration: none;
+}
+
+.navbar-header {
+    width: 100%;
+    text-align: center;
+}
+
+#xiangyingshianniu {
+    padding: 21px 0;
+}
+
+.navbar-toggle {
+    border: none;
+}
+
+.navbar-toggle:hover {
+    opacity: 0.1;
+}
+
+#shangdian {
+    padding: 0;
+}
+
+#pingguo {
+    float: none;
+    display: inline-block;
+    padding: 0;
+}
+
+#head>.container>.daohang>.row .daohang-item {
+    margin-left: 5%;
+    margin-right: 300%;
+}
+
+#content {
+    background-color: white;
+    width: 100%;
+    margin-top: -20px;
+}
+
+#content>#myslider>.carousel-control{
+    background: none;
+}
+
+#content>#myslider>.carousel-control>a{
+    color:#fff;
+    visibility: hidden;
+}
+
+#content>#myslider>.carousel-control>a>span{
+    display: inline-block;
+    background-color: #ccc;
+    opacity: 0.5;
+    width: 60px;
+    height: 60px;
+    padding-top:15px;
+    border-radius: 50%;
+}
+
+#content>#myslider>.carousel-control:hover a{
+    visibility: visible;
+}
+
+#content>#myslider>.carousel-control>a>span:hover{
+    opacity: 0.3;
+}
+
+#content>#myslider img {
+    width: 100%;
+}
+
+#content>.waibu {
+    overflow: hidden;
+    margin: 1px 0;
+}
+
+#content>.waibu img {
+    width: 109%;
+    margin: 1px;
+}
+
+#foot {
+    background-color: #f6f6f6;
+    font-size: 2px;
+}
+
+#foot li {
+    margin-top: 5px;
+}
+
+#foot>.menu {
+    padding: 1% 15%;
+}
+
+#foot>.menu a {
+    color: #888;
+}
+
+#foot>.menu a:hover {
+    text-decoration: underline;
+}
+
+#foot>.menu>.Shop_and_Learn {
+    float: left;
+}
+
+#foot>.menu>.Apple_Store,
+#foot>.menu>.For,
+#foot>.menu>.Account_and_Values,
+#foot>.menu>.About_Apple {
+    float: left;
+    margin-left: 9%;
+}
+
+#foot>.menu>.For>.For_Business,
+#foot>.menu>..Account_and_Values>.Values {
+    margin-top: 30px;
+}
+
+#foot>.weibu {
+    clear: both;
+    margin: 0 15%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    color: #888;
+}
+
+#foot>.weibu a {
+    color: #3385ff;
+}
+
+#foot>.weibu a:hover {
+    text-decoration: underline;
+}
+
+#foot>.weibu ul {
+    display: inline;
+}
+
+#foot>.weibu li {
+    display: inline;
+    padding: 0 8px;
+    background-image: linear-gradient(to right, #f6f6f6, #ccc);
+    background-position: right;
+    background-size: 1px 15px;
+    background-repeat: no-repeat;
+}
+
+#foot>.weibu li:last-child {
+    background: none;
+}
+
+#foot>.weibu>.bg {
+    margin-top: -5px;
+}
+
+#foot>.weibu>.weiba {
+    margin-top: -15px;
+}
+
+#foot>.weibu>.weiba a {
+    color: #888;
+}
+
+#foot>.weibu>.weiba a:hover {
+    text-decoration: underline;
+}
+
+#foot>.weibu>.weiba>.row>#copyright {
+    margin-right: -30px;
+}
+
+#foot>.weibu>.weiba>.row ul {
+    margin-left: -8px;
+}
+
+@media (max-width: 768px) {
+    .yincang {
+        display: none;
+    }
+    .america {
+        text-align: left;
+        margin: 5px 0;
+    }
+    .bg {
+        opacity: 0;
+        margin-bottom: 10px;
+    }
+}
+
+@media(min-width: 768px) {
+    #pingguo {
+        display: none;
+    }
+}

@@ -1,0 +1,28 @@
+*{
+	font-family: arial;
+	margin:0;
+	padding:0;
+}
+
+ol,ul,li{
+	list-style:none;
+}
+a{
+	text-decoration: none;
+}
+
+img{
+	border:none;
+}
+
+.clearfloat{
+	zoom:1;
+}
+
+.clearfloat:after{
+	content:"";
+	display: block;
+	height: 0;
+	visibility: hidden;
+	clear: both;
+}
