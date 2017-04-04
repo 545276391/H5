@@ -43,9 +43,12 @@
     padding: 0;
 }
 
-#head>.container>.daohang>.row .daohang-item {
+#head>.container>.daohang .navbar-nav {
+    float: none;
+}
+
+#head>.container>.daohang .navbar-nav .daohang-item{
     margin-left: 5%;
-    margin-right: 300%;
 }
 
 #content {
@@ -54,30 +57,30 @@
     margin-top: -20px;
 }
 
-#content>#myslider>.carousel-control{
+#content>#myslider>.carousel-control {
     background: none;
 }
 
-#content>#myslider>.carousel-control>a{
-    color:#fff;
+#content>#myslider>.carousel-control>a {
+    color: #fff;
     visibility: hidden;
 }
 
-#content>#myslider>.carousel-control>a>span{
+#content>#myslider>.carousel-control>a>span {
     display: inline-block;
     background-color: #ccc;
     opacity: 0.5;
     width: 60px;
     height: 60px;
-    padding-top:15px;
+    padding-top: 15px;
     border-radius: 50%;
 }
 
-#content>#myslider>.carousel-control:hover a{
+#content>#myslider>.carousel-control:hover a {
     visibility: visible;
 }
 
-#content>#myslider>.carousel-control>a>span:hover{
+#content>#myslider>.carousel-control>a>span:hover {
     opacity: 0.3;
 }
 
@@ -91,13 +94,14 @@
 }
 
 #content>.waibu img {
-    width: 109%;
+    width: 110%;
     margin: 1px;
 }
 
 #foot {
     background-color: #f6f6f6;
-    font-size: 2px;
+    font-size: 12px;
+    font-weight: bold;
 }
 
 #foot li {
@@ -105,7 +109,11 @@
 }
 
 #foot>.menu {
-    padding: 1% 15%;
+    padding-top: 1%;
+}
+
+#foot>.menu .menu-item-unique {
+    margin-right: -13%;
 }
 
 #foot>.menu a {
@@ -116,26 +124,17 @@
     text-decoration: underline;
 }
 
-#foot>.menu>.Shop_and_Learn {
-    float: left;
-}
-
-#foot>.menu>.Apple_Store,
-#foot>.menu>.For,
-#foot>.menu>.Account_and_Values,
-#foot>.menu>.About_Apple {
-    float: left;
-    margin-left: 9%;
-}
-
 #foot>.menu>.For>.For_Business,
 #foot>.menu>..Account_and_Values>.Values {
     margin-top: 30px;
 }
 
+#foot .container {
+    padding-left: 7%;
+    padding-right: 7%;
+}
+
 #foot>.weibu {
-    clear: both;
-    margin: 0 15%;
     padding-top: 30px;
     padding-bottom: 30px;
     color: #888;
@@ -166,27 +165,27 @@
     background: none;
 }
 
-#foot>.weibu>.bg {
+#foot>.weibu .bg {
     margin-top: -5px;
 }
 
-#foot>.weibu>.weiba {
+#foot>.weibu .weiba {
     margin-top: -15px;
 }
 
-#foot>.weibu>.weiba a {
+#foot>.weibu .weiba a {
     color: #888;
 }
 
-#foot>.weibu>.weiba a:hover {
+#foot>.weibu .weiba a:hover {
     text-decoration: underline;
 }
 
-#foot>.weibu>.weiba>.row>#copyright {
+#foot>.weibu .weiba>.row>#copyright {
     margin-right: -30px;
 }
 
-#foot>.weibu>.weiba>.row ul {
+#foot>.weibu .weiba>.row ul {
     margin-left: -8px;
 }
 
@@ -207,5 +206,11 @@
 @media(min-width: 768px) {
     #pingguo {
         display: none;
+    }
+}
+
+@media (max-width: 991px) {
+    #foot>.menu .menu-item-unique {
+        margin-right: -40px;
     }
 }
