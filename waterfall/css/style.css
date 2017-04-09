@@ -8,13 +8,114 @@
 }
 
 .pic{
-	padding:10px;
 	border:1px solid #ccc;
 	border-radius: 5px;
 	box-shadow: 0 0 5px #ccc;
+	font-size: 12px;
+}
+
+.pic-container{
+	position: relative;
 }
 
 .pic img{
-	width:165px;
+	width:185px;
 	height:auto;
+}
+
+.pic-container:hover{
+	opacity: 0.8;
+}
+
+.pic-container:hover div{
+	display: block;
+}
+
+.pic-container div{
+	position: absolute;
+	left:5px;
+	top:5px;
+	display: none;
+}
+
+.button{
+	height: 30px;
+	border:none;
+	padding: 5px 8px;
+	cursor: pointer;
+}
+
+.button:hover{
+	opacity: 0.9;
+}
+
+.btn-collect{
+	background-color: pink;
+	color:#fff;
+	margin-right: 20px;
+}
+
+.btn-zan{
+	background-color: #fff;
+	color:#ccc;
+	-moz-margin-start:-15px;
+}
+
+.btn-comment{
+	background-color: #fff;
+	color:#ccc;
+}
+
+.introduce{
+	border-bottom: 1px solid #ccc;
+	width:180px;
+	padding:5px 0 5px 5px;
+}
+
+.introduce p{
+	padding: 5px;
+}
+
+.numbers{
+	color:#ccc;
+}
+
+.author{
+	width:180px;
+	padding:10px 0 10px 5px;
+}
+
+.author img{
+	width:100%;
+}
+
+.head-pic{
+	float: left;
+	width: 20px;
+	height: 20px;
+	margin-top: 4px;
+	border-radius: 50%;
+	overflow: hidden;
+}
+
+.author-text{
+	float: left;
+	margin-left: 10px;
+}
+
+.author-text a{
+	color:#888;
+}
+
+.author-text a:hover{
+	text-decoration:underline;
+}
+
+.writing{
+	display: inline-block;
+	width: 95px;
+	margin-bottom: -3px;
+	white-space:nowrap;
+	overflow:hidden;
+	text-overflow:ellipsis;
 }

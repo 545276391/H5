@@ -1,115 +1,478 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<link rel="stylesheet" href="css/reset.css">
-	<link rel="stylesheet" href="css/style.css">
-	<title>瀑布流布局</title>
-	<script src="js/script.js"></script>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <title>瀑布流布局</title>
 </head>
+
 <body>
-<div id="main">
-	<div class="box">
-		<div class="pic">
-			<img src="images/P_00.jpg" alt="00">
-		</div>
-	</div>
-	<div class="box">
-		<div class="pic">
-			<img src="images/P_01.jpg" alt="01">
-		</div>
-	</div>
-	<div class="box">
-		<div class="pic">
-			<img src="images/P_02.jpg" alt="02">
-		</div>
-	</div>
-	<div class="box">
-		<div class="pic">
-			<img src="images/P_03.jpg" alt="03">
-		</div>
-	</div>
-	<div class="box">
-		<div class="pic">
-			<img src="images/P_04.jpg" alt="04">
-		</div>
-	</div>
-	<div class="box">
-		<div class="pic">
-			<img src="images/P_05.jpg" alt="05">
-		</div>
-	</div>
-	<div class="box">
-		<div class="pic">
-			<img src="images/P_06.jpg" alt="06">
-		</div>
-	</div>
-	<div class="box">
-		<div class="pic">
-			<img src="images/P_07.jpg" alt="07">
-		</div>
-	</div>
-	<div class="box">
-		<div class="pic">
-			<img src="images/P_08.jpg" alt="08">
-		</div>
-	</div>
-	<div class="box">
-		<div class="pic">
-			<img src="images/P_09.jpg" alt="09">
-		</div>
-	</div>
-	<div class="box">
-		<div class="pic">
-			<img src="images/P_010.jpg" alt="10">
-		</div>
-	</div>
-	<div class="box">
-		<div class="pic">
-			<img src="images/P_011.jpg" alt="11">
-		</div>
-	</div>
-	<div class="box">
-		<div class="pic">
-			<img src="images/P_012.jpg" alt="12">
-		</div>
-	</div>
-	<div class="box">
-		<div class="pic">
-			<img src="images/P_013.jpg" alt="13">
-		</div>
-	</div>
-	<div class="box">
-		<div class="pic">
-			<img src="images/P_014.jpg" alt="14">
-		</div>
-	</div>
-	<div class="box">
-		<div class="pic">
-			<img src="images/P_015.jpg" alt="15">
-		</div>
-	</div>
-	<div class="box">
-		<div class="pic">
-			<img src="images/P_016.jpg" alt="16">
-		</div>
-	</div>
-	<div class="box">
-		<div class="pic">
-			<img src="images/P_017.jpg" alt="17">
-		</div>
-	</div>
-	<div class="box">
-		<div class="pic">
-			<img src="images/P_018.jpg" alt="18">
-		</div>
-	</div>
-	<div class="box">
-		<div class="pic">
-			<img src="images/P_019.jpg" alt="19">
-		</div>
-	</div>
-</div>
-	
+    <div id="main">
+        <div class="box">
+            <div class="pic">
+                <div class="pic-container">
+                    <div class="buttons">
+                        <button class="button btn-collect"><span class="fa fa-star-o fa-lg"></span> 收集 28</button>
+                        <button class="button btn-zan"><span class="fa fa-thumbs-up fa-lg"></span></button>
+                        <button class="button btn-comment"><span class="fa fa-commenting fa-lg"></span></button>
+                    </div>
+                    <img src="images/P_00.jpg" alt="00">
+                </div>
+                <div class="introduce">
+                    <p>《丰乳说》</p>
+                    <p class="numbers"><span class="fa fa-star"></span> 20 <span class="fa fa-thumbs-up"></span> 12 <span class="fa fa-commenting"></span> 2</p>
+                </div>
+                <div class="author clearfloat">
+                    <a href="##" class="head-pic"><img src="images/0.jpg" alt="头像"></a>
+                    <div class="author-text">
+                        <a href="##" class="author-name">Rio</a>
+                        <p>发布到 <a href="##" class="writing">Rio yin的作品集</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="pic">
+                <div class="pic-container">
+                    <div class="buttons">
+                        <button class="button btn-collect"><span class="fa fa-star-o fa-lg"></span> 收集 28</button>
+                        <button class="button btn-zan"><span class="fa fa-thumbs-up fa-lg"></span></button>
+                        <button class="button btn-comment"><span class="fa fa-commenting fa-lg"></span></button>
+                    </div>
+                    <img src="images/P_01.jpg" alt="01">
+                </div>
+                <div class="introduce">
+                    <p>丰乳者</p>
+                    <p class="numbers"><span class="fa fa-star"></span> 20 <span class="fa fa-thumbs-up"></span> 12 <span class="fa fa-commenting"></span> 2</p>
+                </div>
+                <div class="author clearfloat">
+                    <a href="##" class="head-pic"><img src="images/1.jpg" alt="头像"></a>
+                    <div class="author-text">
+                        <a href="##" class="author-name">Akbar</a>
+                        <p>发布到 <a href="##" class="writing">White的作品集</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="pic">
+                <div class="pic-container">
+                    <div class="buttons">
+                        <button class="button btn-collect"><span class="fa fa-star-o fa-lg"></span> 收集 28</button>
+                        <button class="button btn-zan"><span class="fa fa-thumbs-up fa-lg"></span></button>
+                        <button class="button btn-comment"><span class="fa fa-commenting fa-lg"></span></button>
+                    </div>
+                    <img src="images/P_02.jpg" alt="02">
+                </div>
+                <div class="introduce">
+                    <p>非时下之产物也</p>
+                    <p class="numbers"><span class="fa fa-star"></span> 20 <span class="fa fa-thumbs-up"></span> 12 <span class="fa fa-commenting"></span> 2</p>
+                </div>
+                <div class="author clearfloat">
+                    <a href="##" class="head-pic"><img src="images/0.jpg" alt="头像"></a>
+                    <div class="author-text">
+                        <a href="##" class="author-name">Musajan</a>
+                        <p>发布到 <a href="##" class="writing">mushajiang的作品集</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="pic">
+                <div class="pic-container">
+                    <div class="buttons">
+                        <button class="button btn-collect"><span class="fa fa-star-o fa-lg"></span> 收集 28</button>
+                        <button class="button btn-zan"><span class="fa fa-thumbs-up fa-lg"></span></button>
+                        <button class="button btn-comment"><span class="fa fa-commenting fa-lg"></span></button>
+                    </div>
+                    <img src="images/P_03.jpg" alt="03">
+                </div>
+                <div class="introduce">
+                    <p>其籍虽不可考</p>
+                    <p class="numbers"><span class="fa fa-star"></span> 20 <span class="fa fa-thumbs-up"></span> 12 <span class="fa fa-commenting"></span> 2</p>
+                </div>
+                <div class="author clearfloat">
+                    <a href="##" class="head-pic"><img src="images/1.jpg" alt="头像"></a>
+                    <div class="author-text">
+                        <a href="##" class="author-name">Zhaoge</a>
+                        <p>发布到 <a href="##" class="writing">yuzengzhao的作品集</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="pic">
+                <div class="pic-container">
+                    <div class="buttons">
+                        <button class="button btn-collect"><span class="fa fa-star-o fa-lg"></span> 收集 28</button>
+                        <button class="button btn-zan"><span class="fa fa-thumbs-up fa-lg"></span></button>
+                        <button class="button btn-comment"><span class="fa fa-commenting fa-lg"></span></button>
+                    </div>
+                    <img src="images/P_04.jpg" alt="04">
+                </div>
+                <div class="introduce">
+                    <p>必源远流长</p>
+                    <p class="numbers"><span class="fa fa-star"></span> 20 <span class="fa fa-thumbs-up"></span> 12 <span class="fa fa-commenting"></span> 2</p>
+                </div>
+                <div class="author clearfloat">
+                    <a href="##" class="head-pic"><img src="images/0.jpg" alt="头像"></a>
+                    <div class="author-text">
+                        <a href="##" class="author-name">Dafei</a>
+                        <p>发布到 <a href="##" class="writing">randafei的作品集</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="pic">
+                <div class="pic-container">
+                    <div class="buttons">
+                        <button class="button btn-collect"><span class="fa fa-star-o fa-lg"></span> 收集 28</button>
+                        <button class="button btn-zan"><span class="fa fa-thumbs-up fa-lg"></span></button>
+                        <button class="button btn-comment"><span class="fa fa-commenting fa-lg"></span></button>
+                    </div>
+                    <img src="images/P_05.jpg" alt="05">
+                </div>
+                <div class="introduce">
+                    <p>自见世也</p>
+                    <p class="numbers"><span class="fa fa-star"></span> 20 <span class="fa fa-thumbs-up"></span> 12 <span class="fa fa-commenting"></span> 2</p>
+                </div>
+                <div class="author clearfloat">
+                    <a href="##" class="head-pic"><img src="images/1.jpg" alt="头像"></a>
+                    <div class="author-text">
+                        <a href="##" class="author-name">Xueshen</a>
+                        <p>发布到 <a href="##" class="writing">wengjianwei的作品集</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="pic">
+                <div class="pic-container">
+                    <div class="buttons">
+                        <button class="button btn-collect"><span class="fa fa-star-o fa-lg"></span> 收集 28</button>
+                        <button class="button btn-zan"><span class="fa fa-thumbs-up fa-lg"></span></button>
+                        <button class="button btn-comment"><span class="fa fa-commenting fa-lg"></span></button>
+                    </div>
+                    <img src="images/P_06.jpg" alt="06">
+                </div>
+                <div class="introduce">
+                    <p>独宠于众</p>
+                    <p class="numbers"><span class="fa fa-star"></span> 20 <span class="fa fa-thumbs-up"></span> 12 <span class="fa fa-commenting"></span> 2</p>
+                </div>
+                <div class="author clearfloat">
+                    <a href="##" class="head-pic"><img src="images/0.jpg" alt="头像"></a>
+                    <div class="author-text">
+                        <a href="##" class="author-name">Balabala</a>
+                        <p>发布到 <a href="##" class="writing">balabalabalabalabalbalballbalbalblallo</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="pic">
+                <div class="pic-container">
+                    <div class="buttons">
+                        <button class="button btn-collect"><span class="fa fa-star-o fa-lg"></span> 收集 28</button>
+                        <button class="button btn-zan"><span class="fa fa-thumbs-up fa-lg"></span></button>
+                        <button class="button btn-comment"><span class="fa fa-commenting fa-lg"></span></button>
+                    </div>
+                    <img src="images/P_07.jpg" alt="07">
+                </div>
+                <div class="introduce">
+                    <p>乃劝其雨露均沾</p>
+                    <p class="numbers"><span class="fa fa-star"></span> 20 <span class="fa fa-thumbs-up"></span> 12 <span class="fa fa-commenting"></span> 2</p>
+                </div>
+                <div class="author clearfloat">
+                    <a href="##" class="head-pic"><img src="images/1.jpg" alt="头像"></a>
+                    <div class="author-text">
+                        <a href="##" class="author-name">Laolin</a>
+                        <p>发布到 <a href="##" class="writing">huangzhilin的作品集</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="pic">
+                <div class="pic-container">
+                    <div class="buttons">
+                        <button class="button btn-collect"><span class="fa fa-star-o fa-lg"></span> 收集 28</button>
+                        <button class="button btn-zan"><span class="fa fa-thumbs-up fa-lg"></span></button>
+                        <button class="button btn-comment"><span class="fa fa-commenting fa-lg"></span></button>
+                    </div>
+                    <img src="images/P_08.jpg" alt="08">
+                </div>
+                <div class="introduce">
+                    <p>然其固拒乎</p>
+                    <p class="numbers"><span class="fa fa-star"></span> 20 <span class="fa fa-thumbs-up"></span> 12 <span class="fa fa-commenting"></span> 2</p>
+                </div>
+                <div class="author clearfloat">
+                    <a href="##" class="head-pic"><img src="images/1.jpg" alt="头像"></a>
+                    <div class="author-text">
+                        <a href="##" class="author-name">Hahahaha</a>
+                        <p>发布到 <a href="##" class="writing">haofhafsoafhiohfdsgdsgdshoapshgapoghaspo</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="pic">
+                <div class="pic-container">
+                    <div class="buttons">
+                        <button class="button btn-collect"><span class="fa fa-star-o fa-lg"></span> 收集 28</button>
+                        <button class="button btn-zan"><span class="fa fa-thumbs-up fa-lg"></span></button>
+                        <button class="button btn-comment"><span class="fa fa-commenting fa-lg"></span></button>
+                    </div>
+                    <img src="images/P_09.jpg" alt="09">
+                </div>
+                <div class="introduce">
+                    <p>丰乳足矣</p>
+                    <p class="numbers"><span class="fa fa-star"></span> 20 <span class="fa fa-thumbs-up"></span> 12 <span class="fa fa-commenting"></span> 2</p>
+                </div>
+                <div class="author clearfloat">
+                    <a href="##" class="head-pic"><img src="images/0.jpg" alt="头像"></a>
+                    <div class="author-text">
+                        <a href="##" class="author-name">Woyebuzhidao</a>
+                        <p>发布到 <a href="##" class="writing">yaoxieshenmehao</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="pic">
+                <div class="pic-container">
+                    <div class="buttons">
+                        <button class="button btn-collect"><span class="fa fa-star-o fa-lg"></span> 收集 28</button>
+                        <button class="button btn-zan"><span class="fa fa-thumbs-up fa-lg"></span></button>
+                        <button class="button btn-comment"><span class="fa fa-commenting fa-lg"></span></button>
+                    </div>
+                    <img src="images/P_010.jpg" alt="10">
+                </div>
+                <div class="introduce">
+                    <p>遂滥竽充数者甚众</p>
+                    <p class="numbers"><span class="fa fa-star"></span> 20 <span class="fa fa-thumbs-up"></span> 12 <span class="fa fa-commenting"></span> 2</p>
+                </div>
+                <div class="author clearfloat">
+                    <a href="##" class="head-pic"><img src="images/0.jpg" alt="头像"></a>
+                    <div class="author-text">
+                        <a href="##" class="author-name">Najiu</a>
+                        <p>发布到 <a href="##" class="writing">suibianxiexieba</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="pic">
+                <div class="pic-container">
+                    <div class="buttons">
+                        <button class="button btn-collect"><span class="fa fa-star-o fa-lg"></span> 收集 28</button>
+                        <button class="button btn-zan"><span class="fa fa-thumbs-up fa-lg"></span></button>
+                        <button class="button btn-comment"><span class="fa fa-commenting fa-lg"></span></button>
+                    </div>
+                    <img src="images/P_011.jpg" alt="11">
+                </div>
+                <div class="introduce">
+                    <p>其无丰乳之效</p>
+                    <p class="numbers"><span class="fa fa-star"></span> 20 <span class="fa fa-thumbs-up"></span> 12 <span class="fa fa-commenting"></span> 2</p>
+                </div>
+                <div class="author clearfloat">
+                    <a href="##" class="head-pic"><img src="images/0.jpg" alt="头像"></a>
+                    <div class="author-text">
+                        <a href="##" class="author-name">Hoho</a>
+                        <p>发布到 <a href="##" class="writing">hohohohohohohohoohohohohohohohohoho</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="pic">
+                <div class="pic-container">
+                    <div class="buttons">
+                        <button class="button btn-collect"><span class="fa fa-star-o fa-lg"></span> 收集 28</button>
+                        <button class="button btn-zan"><span class="fa fa-thumbs-up fa-lg"></span></button>
+                        <button class="button btn-comment"><span class="fa fa-commenting fa-lg"></span></button>
+                    </div>
+                    <img src="images/P_012.jpg" alt="12">
+                </div>
+                <div class="introduce">
+                    <p>而挂丰乳之名</p>
+                    <p class="numbers"><span class="fa fa-star"></span> 20 <span class="fa fa-thumbs-up"></span> 12 <span class="fa fa-commenting"></span> 2</p>
+                </div>
+                <div class="author clearfloat">
+                    <a href="##" class="head-pic"><img src="images/0.jpg" alt="头像"></a>
+                    <div class="author-text">
+                        <a href="##" class="author-name">Zenme</a>
+                        <p>发布到 <a href="##" class="writing">zhemeduo</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="pic">
+                <div class="pic-container">
+                    <div class="buttons">
+                        <button class="button btn-collect"><span class="fa fa-star-o fa-lg"></span> 收集 28</button>
+                        <button class="button btn-zan"><span class="fa fa-thumbs-up fa-lg"></span></button>
+                        <button class="button btn-comment"><span class="fa fa-commenting fa-lg"></span></button>
+                    </div>
+                    <img src="images/P_013.jpg" alt="13">
+                </div>
+                <div class="introduce">
+                    <p>行无丰乳之事</p>
+                    <p class="numbers"><span class="fa fa-star"></span> 20 <span class="fa fa-thumbs-up"></span> 12 <span class="fa fa-commenting"></span> 2</p>
+                </div>
+                <div class="author clearfloat">
+                    <a href="##" class="head-pic"><img src="images/0.jpg" alt="头像"></a>
+                    <div class="author-text">
+                        <a href="##" class="author-name">Xiedouxiebuwan</a>
+                        <p>发布到 <a href="##" class="writing">nengbunengziongshuru</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="pic">
+                <div class="pic-container">
+                    <div class="buttons">
+                        <button class="button btn-collect"><span class="fa fa-star-o fa-lg"></span> 收集 28</button>
+                        <button class="button btn-zan"><span class="fa fa-thumbs-up fa-lg"></span></button>
+                        <button class="button btn-comment"><span class="fa fa-commenting fa-lg"></span></button>
+                    </div>
+                    <img src="images/P_014.jpg" alt="14">
+                </div>
+                <div class="introduce">
+                    <p>趋于丰乳之人</p>
+                    <p class="numbers"><span class="fa fa-star"></span> 20 <span class="fa fa-thumbs-up"></span> 12 <span class="fa fa-commenting"></span> 2</p>
+                </div>
+                <div class="author clearfloat">
+                    <a href="##" class="head-pic"><img src="images/0.jpg" alt="头像"></a>
+                    <div class="author-text">
+                        <a href="##" class="author-name">Heihei</a>
+                        <p>发布到 <a href="##" class="writing">jintiandiyicizhuangxitong</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="pic">
+                <div class="pic-container">
+                    <div class="buttons">
+                        <button class="button btn-collect"><span class="fa fa-star-o fa-lg"></span> 收集 28</button>
+                        <button class="button btn-zan"><span class="fa fa-thumbs-up fa-lg"></span></button>
+                        <button class="button btn-comment"><span class="fa fa-commenting fa-lg"></span></button>
+                    </div>
+                    <img src="images/P_015.jpg" alt="15">
+                </div>
+                <div class="introduce">
+                    <p>自其捧也</p>
+                    <p class="numbers"><span class="fa fa-star"></span> 20 <span class="fa fa-thumbs-up"></span> 12 <span class="fa fa-commenting"></span> 2</p>
+                </div>
+                <div class="author clearfloat">
+                    <a href="##" class="head-pic"><img src="images/0.jpg" alt="头像"></a>
+                    <div class="author-text">
+                        <a href="##" class="author-name">Jingranchenggongle</a>
+                        <p>发布到 <a href="##" class="writing">youzhangwoleyimenyangjiahukoudexinjishu</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="pic">
+                <div class="pic-container">
+                    <div class="buttons">
+                        <button class="button btn-collect"><span class="fa fa-star-o fa-lg"></span> 收集 28</button>
+                        <button class="button btn-zan"><span class="fa fa-thumbs-up fa-lg"></span></button>
+                        <button class="button btn-comment"><span class="fa fa-commenting fa-lg"></span></button>
+                    </div>
+                    <img src="images/P_016.jpg" alt="16">
+                </div>
+                <div class="introduce">
+                    <p>独宠于众</p>
+                    <p class="numbers"><span class="fa fa-star"></span> 20 <span class="fa fa-thumbs-up"></span> 12 <span class="fa fa-commenting"></span> 2</p>
+                </div>
+                <div class="author clearfloat">
+                    <a href="##" class="head-pic"><img src="images/0.jpg" alt="头像"></a>
+                    <div class="author-text">
+                        <a href="##" class="author-name">Ganjuezijimengmengda</a>
+                        <p>发布到 <a href="##" class="writing">yihoushunbuxiaoqulekeyikaozhegeyangjiahukouhahaha</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="pic">
+                <div class="pic-container">
+                    <div class="buttons">
+                        <button class="button btn-collect"><span class="fa fa-star-o fa-lg"></span> 收集 28</button>
+                        <button class="button btn-zan"><span class="fa fa-thumbs-up fa-lg"></span></button>
+                        <button class="button btn-comment"><span class="fa fa-commenting fa-lg"></span></button>
+                    </div>
+                    <img src="images/P_017.jpg" alt="17">
+                </div>
+                <div class="introduce">
+                    <p>乃劝其雨露均沾</p>
+                    <p class="numbers"><span class="fa fa-star"></span> 20 <span class="fa fa-thumbs-up"></span> 12 <span class="fa fa-commenting"></span> 2</p>
+                </div>
+                <div class="author clearfloat">
+                    <a href="##" class="head-pic"><img src="images/1.jpg" alt="头像"></a>
+                    <div class="author-text">
+                        <a href="##" class="author-name">Zenmehaiyou</a>
+                        <p>发布到 <a href="##" class="writing">shenmeshihoushigetoua</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="pic">
+                <div class="pic-container">
+                    <div class="buttons">
+                        <button class="button btn-collect"><span class="fa fa-star-o fa-lg"></span> 收集 28</button>
+                        <button class="button btn-zan"><span class="fa fa-thumbs-up fa-lg"></span></button>
+                        <button class="button btn-comment"><span class="fa fa-commenting fa-lg"></span></button>
+                    </div>
+                    <img src="images/P_018.jpg" alt="18">
+                </div>
+                <div class="introduce">
+                    <p>然其固拒乎</p>
+                    <p class="numbers"><span class="fa fa-star"></span> 20 <span class="fa fa-thumbs-up"></span> 12 <span class="fa fa-commenting"></span> 2</p>
+                </div>
+                <div class="author clearfloat">
+                    <a href="##" class="head-pic"><img src="images/1.jpg" alt="头像"></a>
+                    <div class="author-text">
+                        <a href="##" class="author-name">Ganjinjieshuba</a>
+                        <p>发布到 <a href="##" class="writing">wobuxiangzaiyela</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="pic">
+                <div class="pic-container">
+                    <div class="buttons">
+                        <button class="button btn-collect"><span class="fa fa-star-o fa-lg"></span> 收集 28</button>
+                        <button class="button btn-zan"><span class="fa fa-thumbs-up fa-lg"></span></button>
+                        <button class="button btn-comment"><span class="fa fa-commenting fa-lg"></span></button>
+                    </div>
+                    <img src="images/P_019.jpg" alt="19">
+                </div>
+                <div class="introduce">
+                    <p>丰乳足矣</p>
+                    <p class="numbers"><span class="fa fa-star"></span> 20 <span class="fa fa-thumbs-up"></span> 12 <span class="fa fa-commenting"></span> 2</p>
+                </div>
+                <div class="author clearfloat">
+                    <a href="##" class="head-pic"><img src="images/1.jpg" alt="头像"></a>
+                    <div class="author-text">
+                        <a href="##" class="author-name">Zhongyu</a>
+                        <p>发布到 <a href="##" class="writing">xiewanla</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
 </body>
+
 </html>
