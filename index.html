@@ -3,7 +3,6 @@
 
 <head>
     <meta charset="UTF-8">
-    <!-- <script src="js/script.js"></script> -->
     <title>估计交通事故赔偿(以东莞为例)</title>
 </head>
 
@@ -27,20 +26,20 @@
 
     let cjfzqjf = parseFloat(prompt('请输入残疾辅助器具费的赔偿标准', '2000'));
 
-    let wgdays = parseInt(prompt('请输入受害人误工天数', '90'));
+    let wgdays = parseInt(prompt('请输入受害人误工天数', '150'));
 
     let hldays = parseInt(prompt('请输入护理人员误工天数', '60'));
 
-    let age = parseInt(prompt('请输入受害人年龄', '66'));
+    let age = parseInt(prompt('请输入受害人年龄', '22'));
 
-    let level = parseFloat(prompt('请输入伤残等级', '5'));
+    let level = parseFloat(prompt('请输入伤残等级', '1'));
 
     let damageIndex = parseFloat((11 - level) / 10);
 
     let boolWugong = prompt('受害人是否有固定收入？', '否');
 
     if (boolWugong === '是') {
-        wugongfei = parseFloat(prompt('请输入实际减少的收入', '3500'));
+        wugongfei = parseFloat(prompt('请输入实际减少的收入', '10500'));
     } else {
         let boolJuzheng = prompt('受害人是否能举证最近三年平均年收入？', '是');
         if (boolJuzheng === '是') {
@@ -55,7 +54,7 @@
     let boolHuli = prompt('护理人员是否有收入？', '否');
 
     if (boolHuli === '是') {
-        hulifei = parseFloat(prompt('请输入护理人员实际减少的收入', '3000'));
+        hulifei = parseFloat(prompt('请输入护理人员实际减少的收入', '6000'));
     } else {
         let boolHuliJuzheng = prompt('护理人员是否能举证最近三年平均年收入？', '否');
         if (boolHuliJuzheng === '是') {
@@ -82,7 +81,7 @@
     let boolCity = prompt('受害人是否为城镇居民？', '否');
 
     if (boolCity === '是') {
-        let avg5 = parseFloat(prompt('请输入受诉法院所在地上一年度城镇居民人均可支配收入', '34757')); //国民家庭全部现金收入中扣除所得税、个人缴纳的社会保障费等费用后剩余的用于安排家庭日常生活的那部分收入
+        let avg5 = parseFloat(prompt('请输入受诉法院所在地上一年度城镇居民人均可支配收入', '34757')); 
         if (age <= 60) {
             cjpcj = avg5 * 20 * damageIndex;
             swpcj = avg5 * 20;
@@ -94,7 +93,7 @@
             swpcj = avg5 * 5;
         }
     } else {
-        let avg6 = parseFloat(prompt('请输入受诉法院所在地上一年度农村居民人均纯收入', '13360')); //农村居民各来源收入总和合扣除其经营性支出、税费支出所剩余的收入，计算公式是：农村居民纯收入=家庭总收入－家庭费用支出－税费支出－生产性固定资产折旧损失
+        let avg6 = parseFloat(prompt('请输入受诉法院所在地上一年度农村居民人均纯收入', '13360')); 
         if (age <= 60) {
             cjpcj = avg6 * 20 * damageIndex;
             swpcj = avg6 * 20;
@@ -107,35 +106,39 @@
         }
     }
 
-    // let number = parseInt(prompt('请输入被扶养人数'));
-    const number = 1;
+    let number = parseInt(prompt('请输入被扶养人数','0'));
 
-    let childAge = parseInt(prompt('请输入被扶养人年龄', '40'));
+    if (number !== 0) {
 
-    let boolChildCity = prompt('被扶养人是否为城镇居民？', '否');
+        let fyAge = parseInt(prompt('请输入被扶养人年龄', '40'));
 
-    if (boolChildCity === '是') {
-        let avg7 = parseFloat(prompt('请输入受诉法院所在地上一年度城镇居民人均消费性支出', '22171.9')); //城镇居民人均消费性支出以城镇居民个人购买商品和劳务两方面支出作为重要权衡指标。
-        if (childAge <= 18) {
-            pfyrshf = avg7 * (18 - childAge) / number * damageIndex;
-        } else if (childAge <= 60) {
-            pfyrshf = avg7 * 20 * damageIndex;
-        } else if (childAge < 75) {
-            pfyrshf = avg7 * (80 - childAge) / number * damageIndex;
+        let boolChildCity = prompt('被扶养人是否为城镇居民？', '否');
+
+        if (boolChildCity === '是') {
+            let avg7 = parseFloat(prompt('请输入受诉法院所在地上一年度城镇居民人均消费性支出', '22171.9')); 
+            if (fyAge <= 18) {
+                pfyrshf = avg7 * (18 - fyAge) / number * damageIndex;
+            } else if (fyAge <= 60) {
+                pfyrshf = avg7 * 20 * damageIndex;
+            } else if (fyAge < 75) {
+                pfyrshf = avg7 * (80 - fyAge) / number * damageIndex;
+            } else {
+                pfyrshf = avg7 * 5 / number * damageIndex;
+            }
         } else {
-            pfyrshf = avg7 * 5 / number * damageIndex;
+            let avg8 = parseFloat(prompt('请输入受诉法院所在地上一年度农村居民人均年生活消费支出', '10043.2'));
+            if (fyAge <= 18) {
+                pfyrshf = avg8 * (18 - fyAge) / number * damageIndex;
+            } else if (fyAge <= 60) {
+                pfyrshf = avg8 * 20 * damageIndex;
+            } else if (fyAge < 75) {
+                pfyrshf = avg8 * (80 - fyAge) / number * damageIndex;
+            } else {
+                pfyrshf = avg8 * 5 / number * damageIndex;
+            }
         }
-    } else {
-        let avg8 = parseFloat(prompt('请输入受诉法院所在地上一年度农村居民人均年生活消费支出', '10043.2')); //农村居民人均年生活消费支出是指农村常驻家庭用于日常生活的全部开支，也即农民家庭实际生活消费支出，反应农民的消费水平
-        if (childAge <= 18) {
-            pfyrshf = avg8 * (18 - childAge) / number * damageIndex;
-        } else if (childAge <= 60) {
-            pfyrshf = avg8 * 20 * damageIndex;
-        } else if (childAge < 75) {
-            pfyrshf = avg8 * (80 - childAge) / number * damageIndex;
-        } else {
-            pfyrshf = avg8 * 5 / number * damageIndex;
-        }
+    }else{
+        pfyrshf = 0;
     }
 
     jsshfwj = (11 - level) * 10000;
