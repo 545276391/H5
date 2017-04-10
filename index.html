@@ -19,19 +19,19 @@
         jsshfwj = 0,
         sum = 0;
 
-    let yiyaofei = parseFloat(prompt('请输入医疗费用', '25000'));
+    let yiyaofei = parseFloat(prompt('请输入医疗费用', '0'));
 
-    let jiaotongfei = parseFloat(prompt('请输入交通费用', '1000'));
+    let jiaotongfei = parseFloat(prompt('请输入交通费用', '500'));
 
-    let ccss = parseFloat(prompt('请输入财产损失费用', '10000'));
+    let ccss = parseFloat(prompt('请输入财产损失费用', '0'));
 
-    let cjfzqjf = parseFloat(prompt('请输入残疾辅助器具费的赔偿标准', '3000'));
+    let cjfzqjf = parseFloat(prompt('请输入残疾辅助器具费的赔偿标准', '2000'));
 
-    let wgdays = parseInt(prompt('请输入受害人误工天数', '30'));
+    let wgdays = parseInt(prompt('请输入受害人误工天数', '90'));
 
-    let hldays = parseInt(prompt('请输入护理人员误工天数', '30'));
+    let hldays = parseInt(prompt('请输入护理人员误工天数', '60'));
 
-    let age = parseInt(prompt('请输入受害人年龄', '50'));
+    let age = parseInt(prompt('请输入受害人年龄', '66'));
 
     let level = parseFloat(prompt('请输入伤残等级', '5'));
 
@@ -40,14 +40,14 @@
     let boolWugong = prompt('受害人是否有固定收入？', '否');
 
     if (boolWugong === '是') {
-        wugongfei = parseFloat(prompt('请输入实际减少的收入', '5000'));
+        wugongfei = parseFloat(prompt('请输入实际减少的收入', '3500'));
     } else {
         let boolJuzheng = prompt('受害人是否能举证最近三年平均年收入？', '是');
         if (boolJuzheng === '是') {
-            let avg1 = parseFloat(prompt('请输入最近三年平均年收入', '50000'));
+            let avg1 = parseFloat(prompt('请输入最近三年平均年收入', '42000'));
             wugongfei = avg1 * wgdays / 365;
         } else {
-            let avg2 = parseFloat(prompt('请输入受诉法院所在地相同或相近行业上一年度职工年平均工资', '50000'));
+            let avg2 = parseFloat(prompt('请输入受诉法院所在地相同或相近行业上一年度职工年平均工资', '42000'));
             wugongfei = avg2 * wgdays / 365;
         }
     }
@@ -70,19 +70,19 @@
     let boolWaidi = prompt('受害人是否到外地治疗？', '否');
 
     if (boolWaidi === '否') {
-        huoshifei = parseFloat(prompt('请输入当地国家机关一般工作人员的出差伙食补助标准', '10000'));
+        huoshifei = parseFloat(prompt('请输入当地国家机关一般工作人员的出差伙食补助标准', '500'));
     } else {
-        huoshifei = parseFloat(prompt('请输入总的伙食费（包括当地国家机关一般工作人员的出差伙食补助标准加上到外地陪护的食宿费）', '15000'));
+        huoshifei = parseFloat(prompt('请输入总的伙食费（包括当地国家机关一般工作人员的出差伙食补助标准加上到外地陪护的食宿费）', '500'));
     }
 
-    let avgMonth = parseFloat(prompt('请输入受诉法院所在地上一年度职工月平均工资', '6000'));
+    let avgMonth = parseFloat(prompt('请输入受诉法院所在地上一年度职工月平均工资', '5400'));
 
     sangzangf = avgMonth * 6;
 
     let boolCity = prompt('受害人是否为城镇居民？', '否');
 
     if (boolCity === '是') {
-        let avg5 = parseFloat(prompt('请输入受诉法院所在地上一年度城镇居民人均可支配收入', '46000')); //国民家庭全部现金收入中扣除所得税、个人缴纳的社会保障费等费用后剩余的用于安排家庭日常生活的那部分收入
+        let avg5 = parseFloat(prompt('请输入受诉法院所在地上一年度城镇居民人均可支配收入', '34757')); //国民家庭全部现金收入中扣除所得税、个人缴纳的社会保障费等费用后剩余的用于安排家庭日常生活的那部分收入
         if (age <= 60) {
             cjpcj = avg5 * 20 * damageIndex;
             swpcj = avg5 * 20;
@@ -94,7 +94,7 @@
             swpcj = avg5 * 5;
         }
     } else {
-        let avg6 = parseFloat(prompt('请输入受诉法院所在地上一年度农村居民人均纯收入', '27000')); //农村居民各来源收入总和合扣除其经营性支出、税费支出所剩余的收入，计算公式是：农村居民纯收入=家庭总收入－家庭费用支出－税费支出－生产性固定资产折旧损失
+        let avg6 = parseFloat(prompt('请输入受诉法院所在地上一年度农村居民人均纯收入', '13360')); //农村居民各来源收入总和合扣除其经营性支出、税费支出所剩余的收入，计算公式是：农村居民纯收入=家庭总收入－家庭费用支出－税费支出－生产性固定资产折旧损失
         if (age <= 60) {
             cjpcj = avg6 * 20 * damageIndex;
             swpcj = avg6 * 20;
@@ -110,12 +110,12 @@
     // let number = parseInt(prompt('请输入被扶养人数'));
     const number = 1;
 
-    let childAge = parseInt(prompt('请输入被扶养人年龄', '25'));
+    let childAge = parseInt(prompt('请输入被扶养人年龄', '40'));
 
     let boolChildCity = prompt('被扶养人是否为城镇居民？', '否');
 
     if (boolChildCity === '是') {
-        let avg7 = parseFloat(prompt('请输入受诉法院所在地上一年度城镇居民人均消费性支出', '33000')); //城镇居民人均消费性支出以城镇居民个人购买商品和劳务两方面支出作为重要权衡指标。
+        let avg7 = parseFloat(prompt('请输入受诉法院所在地上一年度城镇居民人均消费性支出', '22171.9')); //城镇居民人均消费性支出以城镇居民个人购买商品和劳务两方面支出作为重要权衡指标。
         if (childAge <= 18) {
             pfyrshf = avg7 * (18 - childAge) / number * damageIndex;
         } else if (childAge <= 60) {
@@ -126,7 +126,7 @@
             pfyrshf = avg7 * 5 / number * damageIndex;
         }
     } else {
-        let avg8 = parseFloat(prompt('请输入受诉法院所在地上一年度农村居民人均年生活消费支出', '17000')); //农村居民人均年生活消费支出是指农村常驻家庭用于日常生活的全部开支，也即农民家庭实际生活消费支出，反应农民的消费水平
+        let avg8 = parseFloat(prompt('请输入受诉法院所在地上一年度农村居民人均年生活消费支出', '10043.2')); //农村居民人均年生活消费支出是指农村常驻家庭用于日常生活的全部开支，也即农民家庭实际生活消费支出，反应农民的消费水平
         if (childAge <= 18) {
             pfyrshf = avg8 * (18 - childAge) / number * damageIndex;
         } else if (childAge <= 60) {
@@ -159,7 +159,7 @@
 
     alert('若被害人死亡，预计共获赔偿' + sum1 + '元');
 
-    alert('若被害人残疾，预计共获赔偿' + sum2 + '元');
+    alert('若被害人' + level + '级伤残，预计共获赔偿' + sum2 + '元');
 
     alert('结束啦！么么哒！');
     </script>
