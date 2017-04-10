@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- <script src="js/script.js"></script> -->
+    <title>估计交通事故赔偿(以东莞为例)</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+    let wugongfei = 0,
+        hulifei = 0,
+        huoshifei = 0,
+        sangzangf = 0,
+        cjpcj = 0,
+        swpcj = 0,
+        pfyrshf = 0,
+        jsshfwj = 0,
+        sum = 0;
+
+    let yiyaofei = parseFloat(prompt('请输入医疗费用', '25000'));
+
+    let jiaotongfei = parseFloat(prompt('请输入交通费用', '1000'));
+
+    let ccss = parseFloat(prompt('请输入财产损失费用', '10000'));
+
+    let cjfzqjf = parseFloat(prompt('请输入残疾辅助器具费的赔偿标准', '3000'));
+
+    let wgdays = parseInt(prompt('请输入受害人误工天数', '30'));
+
+    let hldays = parseInt(prompt('请输入护理人员误工天数', '30'));
+
+    let age = parseInt(prompt('请输入受害人年龄', '50'));
+
+    let level = parseFloat(prompt('请输入伤残等级', '5'));
+
+    let damageIndex = parseFloat((11 - level) / 10);
+
+    let boolWugong = prompt('受害人是否有固定收入？', '否');
+
+    if (boolWugong === '是') {
+        wugongfei = parseFloat(prompt('请输入实际减少的收入', '5000'));
+    } else {
+        let boolJuzheng = prompt('受害人是否能举证最近三年平均年收入？', '是');
+        if (boolJuzheng === '是') {
+            let avg1 = parseFloat(prompt('请输入最近三年平均年收入', '50000'));
+            wugongfei = avg1 * wgdays / 365;
+        } else {
+            let avg2 = parseFloat(prompt('请输入受诉法院所在地相同或相近行业上一年度职工年平均工资', '50000'));
+            wugongfei = avg2 * wgdays / 365;
+        }
+    }
+
+    let boolHuli = prompt('护理人员是否有收入？', '否');
+
+    if (boolHuli === '是') {
+        hulifei = parseFloat(prompt('请输入护理人员实际减少的收入', '3000'));
+    } else {
+        let boolHuliJuzheng = prompt('护理人员是否能举证最近三年平均年收入？', '否');
+        if (boolHuliJuzheng === '是') {
+            let avg3 = parseFloat(prompt('请输入护理人员最近三年平均年收入', '36000'));
+            hulifei = avg3 * hldays / 365;
+        } else {
+            let avg4 = parseFloat(prompt('请输入当地护工从事同等级别护理的劳务报酬，按天计算', '100'));
+            hulifei = avg4 * hldays;
+        }
+    }
+
+    let boolWaidi = prompt('受害人是否到外地治疗？', '否');
+
+    if (boolWaidi === '否') {
+        huoshifei = parseFloat(prompt('请输入当地国家机关一般工作人员的出差伙食补助标准', '10000'));
+    } else {
+        huoshifei = parseFloat(prompt('请输入总的伙食费（包括当地国家机关一般工作人员的出差伙食补助标准加上到外地陪护的食宿费）', '15000'));
+    }
+
+    let avgMonth = parseFloat(prompt('请输入受诉法院所在地上一年度职工月平均工资', '6000'));
+
+    sangzangf = avgMonth * 6;
+
+    let boolCity = prompt('受害人是否为城镇居民？', '否');
+
+    if (boolCity === '是') {
+        let avg5 = parseFloat(prompt('请输入受诉法院所在地上一年度城镇居民人均可支配收入', '46000')); //国民家庭全部现金收入中扣除所得税、个人缴纳的社会保障费等费用后剩余的用于安排家庭日常生活的那部分收入
+        if (age <= 60) {
+            cjpcj = avg5 * 20 * damageIndex;
+            swpcj = avg5 * 20;
+        } else if (age < 75) {
+            cjpcj = avg5 * (80 - age) * damageIndex;
+            swpcj = avg5 * (80 - age)
+        } else {
+            cjpcj = avg5 * 5 * damageIndex;
+            swpcj = avg5 * 5;
+        }
+    } else {
+        let avg6 = parseFloat(prompt('请输入受诉法院所在地上一年度农村居民人均纯收入', '27000')); //农村居民各来源收入总和合扣除其经营性支出、税费支出所剩余的收入，计算公式是：农村居民纯收入=家庭总收入－家庭费用支出－税费支出－生产性固定资产折旧损失
+        if (age <= 60) {
+            cjpcj = avg6 * 20 * damageIndex;
+            swpcj = avg6 * 20;
+        } else if (age < 75) {
+            cjpcj = avg6 * (80 - age) * damageIndex;
+            swpcj = avg6 * (80 - age);
+        } else {
+            cjpcj = avg6 * 5 * damageIndex;
+            swpcj = avg6 * 5;
+        }
+    }
+
+    // let number = parseInt(prompt('请输入被扶养人数'));
+    const number = 1;
+
+    let childAge = parseInt(prompt('请输入被扶养人年龄', '25'));
+
+    let boolChildCity = prompt('被扶养人是否为城镇居民？', '否');
+
+    if (boolChildCity === '是') {
+        let avg7 = parseFloat(prompt('请输入受诉法院所在地上一年度城镇居民人均消费性支出', '33000')); //城镇居民人均消费性支出以城镇居民个人购买商品和劳务两方面支出作为重要权衡指标。
+        if (childAge <= 18) {
+            pfyrshf = avg7 * (18 - childAge) / number * damageIndex;
+        } else if (childAge <= 60) {
+            pfyrshf = avg7 * 20 * damageIndex;
+        } else if (childAge < 75) {
+            pfyrshf = avg7 * (80 - childAge) / number * damageIndex;
+        } else {
+            pfyrshf = avg7 * 5 / number * damageIndex;
+        }
+    } else {
+        let avg8 = parseFloat(prompt('请输入受诉法院所在地上一年度农村居民人均年生活消费支出', '17000')); //农村居民人均年生活消费支出是指农村常驻家庭用于日常生活的全部开支，也即农民家庭实际生活消费支出，反应农民的消费水平
+        if (childAge <= 18) {
+            pfyrshf = avg8 * (18 - childAge) / number * damageIndex;
+        } else if (childAge <= 60) {
+            pfyrshf = avg8 * 20 * damageIndex;
+        } else if (childAge < 75) {
+            pfyrshf = avg8 * (80 - childAge) / number * damageIndex;
+        } else {
+            pfyrshf = avg8 * 5 / number * damageIndex;
+        }
+    }
+
+    jsshfwj = (11 - level) * 10000;
+
+    alert('医药费为：' + yiyaofei);
+    alert('交通费为：' + jiaotongfei);
+    alert('财产损失费为：' + ccss);
+    alert('误工费为：' + wugongfei);
+    alert('护理费为：' + hulifei);
+    alert('伙食费为：' + huoshifei);
+    alert('丧葬费为：' + sangzangf);
+    alert('残疾赔偿金为：' + cjpcj);
+    alert('死亡赔偿金为：' + swpcj);
+    alert('被扶养人生活费为：' + pfyrshf);
+    alert('精神损害抚慰金为：' + jsshfwj);
+    alert('残疾辅助器具费为：' + cjfzqjf);
+
+    sum1 = yiyaofei + jiaotongfei + ccss + cjfzqjf + wugongfei + hulifei + huoshifei + sangzangf + swpcj + pfyrshf + jsshfwj;
+
+    sum2 = yiyaofei + jiaotongfei + ccss + cjfzqjf + wugongfei + hulifei + huoshifei + cjpcj + pfyrshf + jsshfwj;
+
+    alert('若被害人死亡，预计共获赔偿' + sum1 + '元');
+
+    alert('若被害人残疾，预计共获赔偿' + sum2 + '元');
+    </script>
+</body>
+
+</html>
