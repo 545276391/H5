@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/extjs/6.0.0/classic/theme-classic/resources/theme-classic-all.css" rel="stylesheet" />
+   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/extjs/6.0.0/ext-all.js"></script>
+   <script type="text/javascript">
+   
+   var totalWidth = (document.documentElement.scrollWidth>document.documentElement.clientWidth) 
+  ? document.documentElement.scrollWidth : document.documentElement.clientWidth;//获取屏幕的宽度 
+      // Creation of data model
+      Ext.define('StudentDataModel', {
+         extend: 'Ext.data.Model',
+         fields: [
+         {name: 'cardName', mapping : 'cardName'},
+         {name: 'cost1_100', mapping : 'cost1_100'},
+         {name: 'cost1_200', mapping : 'cost1_200'},
+         {name: 'cost1_300', mapping : 'cost1_300'},
+         {name: 'cost1_400', mapping : 'cost1_400'},
+         {name: 'cost1_500', mapping : 'cost1_500'},
+         {name: 'cost2_100', mapping : 'cost2_100'},
+         {name: 'cost2_200', mapping : 'cost2_200'},
+         {name: 'cost2_300', mapping : 'cost2_300'},
+         {name: 'cost2_400', mapping : 'cost2_400'},
+         {name: 'cost2_500', mapping : 'cost2_500'},
+         {name: 'cost3_100', mapping : 'cost3_100'},
+         {name: 'cost3_200', mapping : 'cost3_200'},
+         {name: 'cost3_300', mapping : 'cost3_300'},
+         {name: 'cost3_400', mapping : 'cost3_400'},
+         {name: 'cost3_500', mapping : 'cost3_500'},
+         {name: 'cost4_100', mapping : 'cost4_100'},
+         {name: 'cost4_200', mapping : 'cost4_200'},
+         {name: 'cost4_300', mapping : 'cost4_300'},
+         {name: 'cost4_400', mapping : 'cost4_400'},
+         {name: 'cost4_500', mapping : 'cost4_500'},
+         {name: 'cost5_100', mapping : 'cost5_100'},
+         {name: 'cost5_200', mapping : 'cost5_200'},
+         {name: 'cost5_300', mapping : 'cost5_300'},
+         {name: 'cost5_400', mapping : 'cost5_400'},
+         {name: 'cost5_500', mapping : 'cost5_500'}
+         ]
+      });
+
+      Ext.onReady(function(){
+         // Store data
+         var myData = [
+            { cardName:"腾讯大王卡", cost1_100:"59", cost1_200:"69", cost1_300:"79", cost1_400:"89", cost1_500:"99", cost2_100:"59", cost2_200:"69", cost2_300:"79", cost2_400:"89", cost2_500:"99", cost3_100:"59", cost3_200:"69", cost3_300:"79", cost3_400:"89", cost3_500:"99", cost4_100:"59", cost4_200:"69", cost4_300:"79", cost4_400:"89", cost4_500:"99", cost5_100:"59", cost5_200:"69", cost5_300:"79", cost5_400:"89", cost5_500:"99"},
+            { cardName:"腾讯天王卡", cost1_100:"89", cost1_200:"89", cost1_300:"89", cost1_400:"89", cost1_500:"89", cost2_100:"89", cost2_200:"89", cost2_300:"89", cost2_400:"89", cost2_500:"89", cost3_100:"89", cost3_200:"89", cost3_300:"89", cost3_400:"89", cost3_500:"89", cost4_100:"89", cost4_200:"89", cost4_300:"89", cost4_400:"89", cost4_500:"89", cost5_100:"89", cost5_200:"89", cost5_300:"89", cost5_400:"89", cost5_500:"89"},
+            { cardName:"支付宝小宝+卡", cost1_100:"26", cost1_200:"36", cost1_300:"46", cost1_400:"56", cost1_500:"66", cost2_100:"41", cost2_200:"51", cost2_300:"61", cost2_400:"71", cost2_500:"81", cost3_100:"56", cost3_200:"66", cost3_300:"76", cost3_400:"86", cost3_500:"96", cost4_100:"71", cost4_200:"81", cost4_300:"91", cost4_400:"101", cost4_500:"111", cost5_100:"86", cost5_200:"96", cost5_300:"106", cost5_400:"116", cost5_500:"126"},
+            { cardName:"支付宝大宝卡", cost1_100:"36", cost1_200:"46", cost1_300:"56", cost1_400:"66", cost1_500:"76", cost2_100:"36", cost2_200:"46", cost2_300:"56", cost2_400:"66", cost2_500:"76", cost3_100:"46", cost3_200:"56", cost3_300:"66", cost3_400:"76", cost3_500:"86", cost4_100:"56", cost4_200:"66", cost4_300:"76", cost4_400:"86", cost4_500:"96", cost5_100:"66", cost5_200:"76", cost5_300:"86", cost5_400:"96", cost5_500:"106"},
+            { cardName:"支付宝芝麻冰淇淋卡", cost1_100:"199", cost1_200:"199", cost1_300:"199", cost1_400:"199", cost1_500:"199", cost2_100:"199", cost2_200:"199", cost2_300:"199", cost2_400:"199", cost2_500:"199", cost3_100:"199", cost3_200:"199", cost3_300:"199", cost3_400:"199", cost3_500:"199", cost4_100:"199", cost4_200:"199", cost4_300:"199", cost4_400:"199", cost4_500:"199", cost5_100:"199", cost5_200:"199", cost5_300:"199", cost5_400:"199", cost5_500:"199"},
+            { cardName:"支付宝流量红包卡", cost1_100:"21.75", cost1_200:"29.25", cost1_300:"36.75", cost1_400:"44.25", cost1_500:"51.75", cost2_100:"29.25", cost2_200:"36.75", cost2_300:"44.25", cost2_400:"51.75", cost2_500:"59.25", cost3_100:"36.75", cost3_200:"44.25", cost3_300:"51.75", cost3_400:"59.25", cost3_500:"66.75", cost4_100:"44.25", cost4_200:"51.75", cost4_300:"59.25", cost4_400:"66.75", cost4_500:"74.25", cost5_100:"51.75", cost5_200:"59.25", cost5_300:"66.75", cost5_400:"74.25", cost5_500:"81.75"},
+            { cardName:"支付宝视频红包卡", cost1_100:"24", cost1_200:"31.5", cost1_300:"39", cost1_400:"46.5", cost1_500:"54", cost2_100:"31.5", cost2_200:"39", cost2_300:"46.5", cost2_400:"54", cost2_500:"61.5", cost3_100:"39", cost3_200:"46.5", cost3_300:"54", cost3_400:"61.5", cost3_500:"69", cost4_100:"46.5", cost4_200:"54", cost4_300:"61.5", cost4_400:"69", cost4_500:"76.5", cost5_100:"54", cost5_200:"61.5", cost5_300:"69", cost5_400:"76.5", cost5_500:"84"},
+            { cardName:"淘宝畅淘卡", cost1_100:"56", cost1_200:"56", cost1_300:"56", cost1_400:"66", cost1_500:"76", cost2_100:"56", cost2_200:"56", cost2_300:"56", cost2_400:"66", cost2_500:"76", cost3_100:"56", cost3_200:"56", cost3_300:"56", cost3_400:"66", cost3_500:"76", cost4_100:"66", cost4_200:"66", cost4_300:"66", cost4_400:"76", cost4_500:"86", cost5_100:"76", cost5_200:"76", cost5_300:"76", cost5_400:"86", cost5_500:"96"},
+            { cardName:"钉钉银卡", cost1_100:"34", cost1_200:"44", cost1_300:"54", cost1_400:"64", cost1_500:"74", cost2_100:"84", cost2_200:"94", cost2_300:"104", cost2_400:"114", cost2_500:"124", cost3_100:"184", cost3_200:"194", cost3_300:"204", cost3_400:"214", cost3_500:"224", cost4_100:"284", cost4_200:"294", cost4_300:"304", cost4_400:"314", cost4_500:"324", cost5_100:"384", cost5_200:"394", cost5_300:"404", cost5_400:"414", cost5_500:"424"},
+            { cardName:"钉钉金卡", cost1_100:"49", cost1_200:"51.5", cost1_300:"61.5", cost1_400:"71.5", cost1_500:"81.5", cost2_100:"49", cost2_200:"51.5", cost2_300:"61.5", cost2_400:"71.5", cost2_500:"81.5", cost3_100:"49", cost3_200:"51.5", cost3_300:"61.5", cost3_400:"71.5", cost3_500:"81.5", cost4_100:"149", cost4_200:"151.5", cost4_300:"161.5", cost4_400:"171.5", cost4_500:"181.5", cost5_100:"249", cost5_200:"251.5", cost5_300:"261.5", cost5_400:"271.5", cost5_500:"281.5"},
+            { cardName:"钉钉钻石卡", cost1_100:"99", cost1_200:"99", cost1_300:"99", cost1_400:"99", cost1_500:"99", cost2_100:"99", cost2_200:"99", cost2_300:"99", cost2_400:"99", cost2_500:"99", cost3_100:"99", cost3_200:"99", cost3_300:"99", cost3_400:"99", cost3_500:"99", cost4_100:"99", cost4_200:"99", cost4_300:"99", cost4_400:"99", cost4_500:"99", cost5_100:"99", cost5_200:"99", cost5_300:"99", cost5_400:"99", cost5_500:"99"},
+            { cardName:"京东小强卡", cost1_100:"31", cost1_200:"46", cost1_300:"61", cost1_400:"76", cost1_500:"91", cost2_100:"46", cost2_200:"61", cost2_300:"76", cost2_400:"91", cost2_500:"106", cost3_100:"61", cost3_200:"76", cost3_300:"91", cost3_400:"106", cost3_500:"121", cost4_100:"76", cost4_200:"91", cost4_300:"106", cost4_400:"121", cost4_500:"136", cost5_100:"91", cost5_200:"106", cost5_300:"121", cost5_400:"136", cost5_500:"151"},
+            { cardName:"京东大强卡", cost1_100:"56", cost1_200:"56", cost1_300:"56", cost1_400:"66", cost1_500:"96", cost2_100:"56", cost2_200:"56", cost2_300:"56", cost2_400:"66", cost2_500:"76", cost3_100:"56", cost3_200:"56", cost3_300:"56", cost3_400:"66", cost3_500:"76", cost4_100:"66", cost4_200:"66", cost4_300:"66", cost4_400:"76", cost4_500:"86", cost5_100:"76", cost5_200:"76", cost5_300:"76", cost5_400:"86", cost5_500:"96"},
+            { cardName:"百度小神卡", cost1_100:"28", cost1_200:"38", cost1_300:"48", cost1_400:"58", cost1_500:"68", cost2_100:"43", cost2_200:"53", cost2_300:"63", cost2_400:"73", cost2_500:"83", cost3_100:"58", cost3_200:"68", cost3_300:"78", cost3_400:"88", cost3_500:"98", cost4_100:"73", cost4_200:"83", cost4_300:"93", cost4_400:"103", cost4_500:"113", cost5_100:"88", cost5_200:"98", cost5_300:"108", cost5_400:"118", cost5_500:"128"},
+            { cardName:"百度女神卡", cost1_100:"37", cost1_200:"37", cost1_300:"47", cost1_400:"57", cost1_500:"67", cost2_100:"47", cost2_200:"47", cost2_300:"57", cost2_400:"67", cost2_500:"77", cost3_100:"57", cost3_200:"57", cost3_300:"67", cost3_400:"77", cost3_500:"87", cost4_100:"67", cost4_200:"67", cost4_300:"77", cost4_400:"87", cost4_500:"97", cost5_100:"77", cost5_200:"77", cost5_300:"87", cost5_400:"97", cost5_500:"107"},
+            { cardName:"百度大神卡", cost1_100:"198", cost1_200:"198", cost1_300:"198", cost1_400:"198", cost1_500:"189", cost2_100:"198", cost2_200:"198", cost2_300:"198", cost2_400:"198", cost2_500:"198", cost3_100:"198", cost3_200:"198", cost3_300:"198", cost3_400:"198", cost3_500:"198", cost4_100:"198", cost4_200:"198", cost4_300:"198", cost4_400:"198", cost4_500:"198", cost5_100:"198", cost5_200:"198", cost5_300:"198", cost5_400:"198", cost5_500:"198"},
+            { cardName:"百度小圣卡", cost1_100:"49", cost1_200:"59", cost1_300:"69", cost1_400:"79", cost1_500:"89", cost2_100:"49", cost2_200:"59", cost2_300:"69", cost2_400:"79", cost2_500:"89", cost3_100:"49", cost3_200:"59", cost3_300:"69", cost3_400:"79", cost3_500:"89", cost4_100:"49", cost4_200:"59", cost4_300:"69", cost4_400:"79", cost4_500:"89", cost5_100:"49", cost5_200:"59", cost5_300:"69", cost5_400:"79", cost5_500:"89"},
+            { cardName:"百度大圣卡", cost1_100:"29", cost1_200:"39", cost1_300:"49", cost1_400:"59", cost1_500:"69", cost2_100:"59", cost2_200:"69", cost2_300:"79", cost2_400:"89", cost2_500:"99", cost3_100:"59", cost3_200:"69", cost3_300:"79", cost3_400:"89", cost3_500:"99", cost4_100:"59", cost4_200:"69", cost4_300:"79", cost4_400:"89", cost4_500:"99", cost5_100:"59", cost5_200:"69", cost5_300:"79", cost5_400:"89", cost5_500:"99"},
+            { cardName:"百度超圣卡", cost1_100:"59", cost1_200:"59", cost1_300:"69", cost1_400:"79", cost1_500:"89", cost2_100:"59", cost2_200:"59", cost2_300:"69", cost2_400:"79", cost2_500:"89", cost3_100:"59", cost3_200:"59", cost3_300:"69", cost3_400:"79", cost3_500:"89", cost4_100:"59", cost4_200:"59", cost4_300:"69", cost4_400:"79", cost4_500:"89", cost5_100:"89", cost5_200:"89", cost5_300:"99", cost5_400:"109", cost5_500:"119"},
+            { cardName:"小米29元月租米粉卡", cost1_100:"39", cost1_200:"49", cost1_300:"59", cost1_400:"69", cost1_500:"79", cost2_100:"39", cost2_200:"49", cost2_300:"59", cost2_400:"69", cost2_500:"79", cost3_100:"49", cost3_200:"59", cost3_300:"69", cost3_400:"79", cost3_500:"89", cost4_100:"59", cost4_200:"69", cost4_300:"79", cost4_400:"89", cost4_500:"99", cost5_100:"69", cost5_200:"79", cost5_300:"89", cost5_400:"99", cost5_500:"109"},
+            { cardName:"小米59元月租米粉卡", cost1_100:"59", cost1_200:"59", cost1_300:"69", cost1_400:"79", cost1_500:"89", cost2_100:"59", cost2_200:"59", cost2_300:"69", cost2_400:"79", cost2_500:"89", cost3_100:"59", cost3_200:"59", cost3_300:"69", cost3_400:"79", cost3_500:"89", cost4_100:"59", cost4_200:"59", cost4_300:"69", cost4_400:"79", cost4_500:"89", cost5_100:"69", cost5_200:"69", cost5_300:"79", cost5_400:"89", cost5_500:"99"},
+            { cardName:"小米1元日租米粉卡", cost1_100:"45", cost1_200:"55", cost1_300:"65", cost1_400:"75", cost1_500:"85", cost2_100:"45", cost2_200:"55", cost2_300:"65", cost2_400:"75", cost2_500:"85", cost3_100:"45", cost3_200:"55", cost3_300:"65", cost3_400:"75", cost3_500:"85", cost4_100:"45", cost4_200:"55", cost4_300:"65", cost4_400:"75", cost4_500:"85", cost5_100:"45", cost5_200:"55", cost5_300:"65", cost5_400:"75", cost5_500:"85"},
+            { cardName:"小米不限量日租米粉卡", cost1_100:"105", cost1_200:"115", cost1_300:"125", cost1_400:"135", cost1_500:"145", cost2_100:"105", cost2_200:"115", cost2_300:"125", cost2_400:"135", cost2_500:"145", cost3_100:"105", cost3_200:"115", cost3_300:"125", cost3_400:"135", cost3_500:"145", cost4_100:"105", cost4_200:"115", cost4_300:"125", cost4_400:"135", cost4_500:"145", cost5_100:"105", cost5_200:"115", cost5_300:"125", cost5_400:"135", cost5_500:"145"},
+            { cardName:"新浪微博V+卡", cost1_100:"29", cost1_200:"39", cost1_300:"49", cost1_400:"59", cost1_500:"69", cost2_100:"41", cost2_200:"51", cost2_300:"61", cost2_400:"71", cost2_500:"81", cost3_100:"53", cost3_200:"63", cost3_300:"73", cost3_400:"83", cost3_500:"93", cost4_100:"65", cost4_200:"75", cost4_300:"85", cost4_400:"95", cost4_500:"105", cost5_100:"77", cost5_200:"87", cost5_300:"97", cost5_400:"107", cost5_500:"117"},
+            { cardName:"新浪微博大V卡", cost1_100:"69", cost1_200:"69", cost1_300:"69", cost1_400:"79", cost1_500:"89", cost2_100:"69", cost2_200:"69", cost2_300:"69", cost2_400:"79", cost2_500:"89", cost3_100:"69", cost3_200:"69", cost3_300:"69", cost3_400:"79", cost3_500:"89", cost4_100:"79", cost4_200:"79", cost4_300:"79", cost4_400:"89", cost4_500:"99", cost5_100:"89", cost5_200:"89", cost5_300:"89", cost5_400:"99", cost5_500:"109"},
+            { cardName:"新浪微博金V卡", cost1_100:"199", cost1_200:"199", cost1_300:"199", cost1_400:"199", cost1_500:"199", cost2_100:"199", cost2_200:"199", cost2_300:"199", cost2_400:"199", cost2_500:"199", cost3_100:"199", cost3_200:"199", cost3_300:"199", cost3_400:"199", cost3_500:"199", cost4_100:"199", cost4_200:"199", cost4_300:"199", cost4_400:"199", cost4_500:"199", cost5_100:"199", cost5_200:"199", cost5_300:"199", cost5_400:"199", cost5_500:"199"},
+            { cardName:"哔哩哔哩22卡", cost1_100:"32", cost1_200:"42", cost1_300:"52", cost1_400:"62", cost1_500:"72", cost2_100:"62", cost2_200:"72", cost2_300:"82", cost2_400:"92", cost2_500:"102", cost3_100:"62", cost3_200:"72", cost3_300:"82", cost3_400:"92", cost3_500:"102", cost4_100:"62", cost4_200:"72", cost4_300:"82", cost4_400:"92", cost4_500:"102", cost5_100:"62", cost5_200:"72", cost5_300:"82", cost5_400:"92", cost5_500:"102"},
+            { cardName:"哔哩哔哩33卡", cost1_100:"43", cost1_200:"53", cost1_300:"63", cost1_400:"73", cost1_500:"83", cost2_100:"43", cost2_200:"53", cost2_300:"63", cost2_400:"73", cost2_500:"83", cost3_100:"73", cost3_200:"83", cost3_300:"93", cost3_400:"103", cost3_500:"113", cost4_100:"73", cost4_200:"83", cost4_300:"93", cost4_400:"103", cost4_500:"113", cost5_100:"73", cost5_200:"83", cost5_300:"93", cost5_400:"103", cost5_500:"113"},
+            { cardName:"哔哩哔哩小电视卡", cost1_100:"66", cost1_200:"66", cost1_300:"76", cost1_400:"86", cost1_500:"96", cost2_100:"66", cost2_200:"66", cost2_300:"76", cost2_400:"86", cost2_500:"96", cost3_100:"66", cost3_200:"66", cost3_300:"76", cost3_400:"86", cost3_500:"96", cost4_100:"66", cost4_200:"66", cost4_300:"76", cost4_400:"86", cost4_500:"96", cost5_100:"96", cost5_200:"96", cost5_300:"106", cost5_400:"116", cost5_500:"126"},
+            { cardName:"映客直播小映卡", cost1_100:"39", cost1_200:"49", cost1_300:"59", cost1_400:"69", cost1_500:"79", cost2_100:"69", cost2_200:"79", cost2_300:"89", cost2_400:"99", cost2_500:"109", cost3_100:"69", cost3_200:"79", cost3_300:"89", cost3_400:"99", cost3_500:"109", cost4_100:"69", cost4_200:"79", cost4_300:"89", cost4_400:"99", cost4_500:"109", cost5_100:"69", cost5_200:"79", cost5_300:"89", cost5_400:"99", cost5_500:"109"},
+            { cardName:"映客直播大映卡", cost1_100:"59", cost1_200:"59", cost1_300:"69", cost1_400:"79", cost1_500:"89", cost2_100:"59", cost2_200:"59", cost2_300:"69", cost2_400:"79", cost2_500:"89", cost3_100:"59", cost3_200:"59", cost3_300:"69", cost3_400:"79", cost3_500:"89", cost4_100:"89", cost4_200:"89", cost4_300:"99", cost4_400:"109", cost4_500:"119", cost5_100:"89", cost5_200:"89", cost5_300:"99", cost5_400:"109", cost5_500:"119"},
+            { cardName:"花椒直播小花椒卡", cost1_100:"39", cost1_200:"49", cost1_300:"59", cost1_400:"69", cost1_500:"79", cost2_100:"39", cost2_200:"49", cost2_300:"59", cost2_400:"69", cost2_500:"79", cost3_100:"69", cost3_200:"79", cost3_300:"89", cost3_400:"99", cost3_500:"109", cost4_100:"69", cost4_200:"79", cost4_300:"89", cost4_400:"99", cost4_500:"109", cost5_100:"69", cost5_200:"79", cost5_300:"89", cost5_400:"99", cost5_500:"109"},
+            { cardName:"花椒直播大花椒卡", cost1_100:"59", cost1_200:"59", cost1_300:"69", cost1_400:"79", cost1_500:"89", cost2_100:"59", cost2_200:"59", cost2_300:"69", cost2_400:"79", cost2_500:"89", cost3_100:"59", cost3_200:"59", cost3_300:"69", cost3_400:"79", cost3_500:"89", cost4_100:"59", cost4_200:"59", cost4_300:"69", cost4_400:"79", cost4_500:"89", cost5_100:"89", cost5_200:"89", cost5_300:"99", cost5_400:"109", cost5_500:"119"},
+            { cardName:"优酷土豆小酷卡", cost1_100:"49", cost1_200:"59", cost1_300:"69", cost1_400:"79", cost1_500:"89", cost2_100:"49", cost2_200:"59", cost2_300:"69", cost2_400:"79", cost2_500:"89", cost3_100:"49", cost3_200:"59", cost3_300:"69", cost3_400:"79", cost3_500:"89", cost4_100:"49", cost4_200:"59", cost4_300:"69", cost4_400:"79", cost4_500:"89", cost5_100:"49", cost5_200:"59", cost5_300:"69", cost5_400:"79", cost5_500:"89"},
+            { cardName:"优酷土豆大酷卡", cost1_100:"39", cost1_200:"49", cost1_300:"59", cost1_400:"69", cost1_500:"79", cost2_100:"39", cost2_200:"49", cost2_300:"59", cost2_400:"69", cost2_500:"79", cost3_100:"69", cost3_200:"79", cost3_300:"89", cost3_400:"99", cost3_500:"109", cost4_100:"69", cost4_200:"79", cost4_300:"89", cost4_400:"99", cost4_500:"109", cost5_100:"69", cost5_200:"79", cost5_300:"89", cost5_400:"99", cost5_500:"109"},
+            { cardName:"工商银行梦想e卡", cost1_100:"29", cost1_200:"39", cost1_300:"49", cost1_400:"59", cost1_500:"69", cost2_100:"29", cost2_200:"39", cost2_300:"49", cost2_400:"59", cost2_500:"69", cost3_100:"39", cost3_200:"49", cost3_300:"59", cost3_400:"69", cost3_500:"79", cost4_100:"49", cost4_200:"59", cost4_300:"69", cost4_400:"79", cost4_500:"89", cost5_100:"59", cost5_200:"69", cost5_300:"79", cost5_400:"89", cost5_500:"99"},
+            { cardName:"工商银行大e卡", cost1_100:"89", cost1_200:"89", cost1_300:"89", cost1_400:"89", cost1_500:"89", cost2_100:"89", cost2_200:"89", cost2_300:"89", cost2_400:"89", cost2_500:"89", cost3_100:"89", cost3_200:"89", cost3_300:"89", cost3_400:"89", cost3_500:"89", cost4_100:"89", cost4_200:"89", cost4_300:"89", cost4_400:"89", cost4_500:"89", cost5_100:"89", cost5_200:"89", cost5_300:"89", cost5_400:"89", cost5_500:"89"},
+            { cardName:"招商银行小招卡", cost1_100:"36", cost1_200:"46", cost1_300:"56", cost1_400:"66", cost1_500:"76", cost2_100:"36", cost2_200:"46", cost2_300:"56", cost2_400:"66", cost2_500:"76", cost3_100:"46", cost3_200:"56", cost3_300:"66", cost3_400:"76", cost3_500:"86", cost4_100:"56", cost4_200:"66", cost4_300:"76", cost4_400:"86", cost4_500:"96", cost5_100:"66", cost5_200:"76", cost5_300:"86", cost5_400:"96", cost5_500:"106"},
+            { cardName:"招商银行大招卡", cost1_100:"96", cost1_200:"96", cost1_300:"96", cost1_400:"96", cost1_500:"96", cost2_100:"96", cost2_200:"96", cost2_300:"96", cost2_400:"96", cost2_500:"96", cost3_100:"96", cost3_200:"96", cost3_300:"96", cost3_400:"96", cost3_500:"96", cost4_100:"96", cost4_200:"96", cost4_300:"96", cost4_400:"96", cost4_500:"96", cost5_100:"96", cost5_200:"96", cost5_300:"96", cost5_400:"96", cost5_500:"96"},
+            { cardName:"浦发银行小发卡", cost1_100:"36", cost1_200:"46", cost1_300:"56", cost1_400:"66", cost1_500:"76", cost2_100:"36", cost2_200:"46", cost2_300:"56", cost2_400:"66", cost2_500:"76", cost3_100:"46", cost3_200:"56", cost3_300:"66", cost3_400:"76", cost3_500:"86", cost4_100:"56", cost4_200:"66", cost4_300:"76", cost4_400:"86", cost4_500:"96", cost5_100:"66", cost5_200:"76", cost5_300:"86", cost5_400:"96", cost5_500:"106"},
+            { cardName:"浦发银行大发卡", cost1_100:"96", cost1_200:"96", cost1_300:"96", cost1_400:"96", cost1_500:"96", cost2_100:"96", cost2_200:"96", cost2_300:"96", cost2_400:"96", cost2_500:"96", cost3_100:"96", cost3_200:"96", cost3_300:"96", cost3_400:"96", cost3_500:"96", cost4_100:"96", cost4_200:"96", cost4_300:"96", cost4_400:"96", cost4_500:"96", cost5_100:"96", cost5_200:"96", cost5_300:"96", cost5_400:"96", cost5_500:"96"},
+            { cardName:"招联金融招联牛卡", cost1_100:"39", cost1_200:"44", cost1_300:"54", cost1_400:"64", cost1_500:"74", cost2_100:"39", cost2_200:"44", cost2_300:"54", cost2_400:"64", cost2_500:"74", cost3_100:"49", cost3_200:"54", cost3_300:"64", cost3_400:"74", cost3_500:"84", cost4_100:"59", cost4_200:"64", cost4_300:"74", cost4_400:"84", cost4_500:"94", cost5_100:"69", cost5_200:"74", cost5_300:"84", cost5_400:"94", cost5_500:"104"},
+            { cardName:"同花顺小顺卡", cost1_100:"38", cost1_200:"48", cost1_300:"58", cost1_400:"68", cost1_500:"78", cost2_100:"38", cost2_200:"48", cost2_300:"58", cost2_400:"68", cost2_500:"78", cost3_100:"48", cost3_200:"58", cost3_300:"68", cost3_400:"78", cost3_500:"88", cost4_100:"58", cost4_200:"68", cost4_300:"78", cost4_400:"88", cost4_500:"98", cost5_100:"68", cost5_200:"78", cost5_300:"88", cost5_400:"98", cost5_500:"108"},
+            { cardName:"同花顺大顺卡", cost1_100:"58", cost1_200:"58", cost1_300:"58", cost1_400:"68", cost1_500:"78", cost2_100:"58", cost2_200:"58", cost2_300:"58", cost2_400:"68", cost2_500:"78", cost3_100:"58", cost3_200:"58", cost3_300:"58", cost3_400:"68", cost3_500:"78", cost4_100:"68", cost4_200:"68", cost4_300:"68", cost4_400:"78", cost4_500:"88", cost5_100:"78", cost5_200:"78", cost5_300:"78", cost5_400:"88", cost5_500:"98"},
+            { cardName:"同花顺天顺卡", cost1_100:"118", cost1_200:"118", cost1_300:"118", cost1_400:"118", cost1_500:"118", cost2_100:"118", cost2_200:"118", cost2_300:"118", cost2_400:"118", cost2_500:"118", cost3_100:"118", cost3_200:"118", cost3_300:"118", cost3_400:"118", cost3_500:"118", cost4_100:"118", cost4_200:"118", cost4_300:"118", cost4_400:"118", cost4_500:"118", cost5_100:"118", cost5_200:"118", cost5_300:"118", cost5_400:"118", cost5_500:"118"},
+            { cardName:"滴滴mini橙卡", cost1_100:"36", cost1_200:"46", cost1_300:"56", cost1_400:"66", cost1_500:"76", cost2_100:"36", cost2_200:"46", cost2_300:"56", cost2_400:"66", cost2_500:"76", cost3_100:"46", cost3_200:"56", cost3_300:"66", cost3_400:"76", cost3_500:"86", cost4_100:"56", cost4_200:"66", cost4_300:"76", cost4_400:"86", cost4_500:"96", cost5_100:"66", cost5_200:"76", cost5_300:"86", cost5_400:"96", cost5_500:"106"},
+            { cardName:"滴滴小橙卡", cost1_100:"56", cost1_200:"56", cost1_300:"56", cost1_400:"66", cost1_500:"76", cost2_100:"56", cost2_200:"56", cost2_300:"56", cost2_400:"66", cost2_500:"76", cost3_100:"56", cost3_200:"56", cost3_300:"56", cost3_400:"66", cost3_500:"76", cost4_100:"66", cost4_200:"66", cost4_300:"66", cost4_400:"76", cost4_500:"86", cost5_100:"76", cost5_200:"76", cost5_300:"76", cost5_400:"86", cost5_500:"96"},
+            { cardName:"滴滴大橙卡", cost1_100:"96", cost1_200:"96", cost1_300:"96", cost1_400:"96", cost1_500:"96", cost2_100:"96", cost2_200:"96", cost2_300:"96", cost2_400:"96", cost2_500:"96", cost3_100:"96", cost3_200:"96", cost3_300:"96", cost3_400:"96", cost3_500:"96", cost4_100:"96", cost4_200:"96", cost4_300:"96", cost4_400:"96", cost4_500:"96", cost5_100:"96", cost5_200:"96", cost5_300:"96", cost5_400:"96", cost5_500:"96"},
+            { cardName:"滴滴小王卡", cost1_100:"58", cost1_200:"58", cost1_300:"58", cost1_400:"58", cost1_500:"58", cost2_100:"58", cost2_200:"58", cost2_300:"58", cost2_400:"58", cost2_500:"58", cost3_100:"58", cost3_200:"58", cost3_300:"58", cost3_400:"58", cost3_500:"58", cost4_100:"158", cost4_200:"158", cost4_300:"158", cost4_400:"158", cost4_500:"158", cost5_100:"258", cost5_200:"258", cost5_300:"258", cost5_400:"258", cost5_500:"258"},
+            { cardName:"滴滴大王卡", cost1_100:"98", cost1_200:"98", cost1_300:"98", cost1_400:"98", cost1_500:"98", cost2_100:"98", cost2_200:"98", cost2_300:"98", cost2_400:"98", cost2_500:"98", cost3_100:"98", cost3_200:"98", cost3_300:"98", cost3_400:"98", cost3_500:"98", cost4_100:"98", cost4_200:"98", cost4_300:"98", cost4_400:"98", cost4_500:"98", cost5_100:"98", cost5_200:"98", cost5_300:"98", cost5_400:"98", cost5_500:"98"},
+            { cardName:"今日头条懂我卡", cost1_100:"39", cost1_200:"49", cost1_300:"59", cost1_400:"69", cost1_500:"79", cost2_100:"39", cost2_200:"49", cost2_300:"59", cost2_400:"69", cost2_500:"79", cost3_100:"49", cost3_200:"59", cost3_300:"69", cost3_400:"79", cost3_500:"89", cost4_100:"59", cost4_200:"69", cost4_300:"79", cost4_400:"89", cost4_500:"99", cost5_100:"69", cost5_200:"79", cost5_300:"89", cost5_400:"99", cost5_500:"109"},
+            { cardName:"今日头条懂我卡Plus", cost1_100:"59", cost1_200:"59", cost1_300:"69", cost1_400:"79", cost1_500:"89", cost2_100:"59", cost2_200:"59", cost2_300:"69", cost2_400:"79", cost2_500:"89", cost3_100:"59", cost3_200:"59", cost3_300:"69", cost3_400:"79", cost3_500:"89", cost4_100:"59", cost4_200:"59", cost4_300:"69", cost4_400:"79", cost4_500:"89", cost5_100:"69", cost5_200:"69", cost5_300:"79", cost5_400:"89", cost5_500:"99"},
+            { cardName:"天翼资讯看看卡", cost1_100:"46", cost1_200:"56", cost1_300:"66", cost1_400:"76", cost1_500:"86", cost2_100:"46", cost2_200:"56", cost2_300:"66", cost2_400:"76", cost2_500:"86", cost3_100:"46", cost3_200:"56", cost3_300:"66", cost3_400:"76", cost3_500:"86", cost4_100:"46", cost4_200:"56", cost4_300:"66", cost4_400:"76", cost4_500:"86", cost5_100:"46", cost5_200:"56", cost5_300:"66", cost5_400:"76", cost5_500:"86"},
+            { cardName:"饿了么小饿卡", cost1_100:"56", cost1_200:"56", cost1_300:"56", cost1_400:"66", cost1_500:"76", cost2_100:"56", cost2_200:"56", cost2_300:"56", cost2_400:"66", cost2_500:"76", cost3_100:"56", cost3_200:"56", cost3_300:"56", cost3_400:"66", cost3_500:"76", cost4_100:"66", cost4_200:"66", cost4_300:"66", cost4_400:"76", cost4_500:"86", cost5_100:"76", cost5_200:"76", cost5_300:"76", cost5_400:"86", cost5_500:"96"},
+            { cardName:"饿了么大饿卡", cost1_100:"96", cost1_200:"96", cost1_300:"96", cost1_400:"96", cost1_500:"96", cost2_100:"96", cost2_200:"96", cost2_300:"96", cost2_400:"96", cost2_500:"96", cost3_100:"96", cost3_200:"96", cost3_300:"96", cost3_400:"96", cost3_500:"96", cost4_100:"96", cost4_200:"96", cost4_300:"96", cost4_400:"96", cost4_500:"96", cost5_100:"96", cost5_200:"96", cost5_300:"96", cost5_400:"96", cost5_500:"96"},
+            { cardName:"饿了么蜂鸟卡", cost1_100:"56", cost1_200:"56", cost1_300:"56", cost1_400:"56", cost1_500:"66", cost2_100:"56", cost2_200:"56", cost2_300:"56", cost2_400:"56", cost2_500:"66", cost3_100:"56", cost3_200:"56", cost3_300:"56", cost3_400:"56", cost3_500:"66", cost4_100:"66", cost4_200:"66", cost4_300:"66", cost4_400:"66", cost4_500:"76", cost5_100:"76", cost5_200:"76", cost5_300:"76", cost5_400:"76", cost5_500:"86"},
+            { cardName:"饿了么蜂王卡", cost1_100:"96", cost1_200:"96", cost1_300:"96", cost1_400:"96", cost1_500:"96", cost2_100:"96", cost2_200:"96", cost2_300:"96", cost2_400:"96", cost2_500:"96", cost3_100:"96", cost3_200:"96", cost3_300:"96", cost3_400:"96", cost3_500:"96", cost4_100:"96", cost4_200:"96", cost4_300:"96", cost4_400:"96", cost4_500:"96", cost5_100:"96", cost5_200:"96", cost5_300:"96", cost5_400:"96", cost5_500:"96"},
+            { cardName:"美团小美卡", cost1_100:"36", cost1_200:"46", cost1_300:"56", cost1_400:"66", cost1_500:"76", cost2_100:"36", cost2_200:"46", cost2_300:"56", cost2_400:"66", cost2_500:"76", cost3_100:"46", cost3_200:"56", cost3_300:"66", cost3_400:"76", cost3_500:"86", cost4_100:"56", cost4_200:"66", cost4_300:"76", cost4_400:"86", cost4_500:"96", cost5_100:"66", cost5_200:"76", cost5_300:"86", cost5_400:"96", cost5_500:"106"},
+            { cardName:"美团大美卡", cost1_100:"96", cost1_200:"96", cost1_300:"96", cost1_400:"96", cost1_500:"96", cost2_100:"96", cost2_200:"96", cost2_300:"96", cost2_400:"96", cost2_500:"96", cost3_100:"96", cost3_200:"96", cost3_300:"96", cost3_400:"96", cost3_500:"96", cost4_100:"96", cost4_200:"96", cost4_300:"96", cost4_400:"96", cost4_500:"96", cost5_100:"96", cost5_200:"96", cost5_300:"96", cost5_400:"96", cost5_500:"96"},
+            { cardName:"运满满小满卡", cost1_100:"56", cost1_200:"56", cost1_300:"56", cost1_400:"56", cost1_500:"66", cost2_100:"56", cost2_200:"56", cost2_300:"56", cost2_400:"56", cost2_500:"66", cost3_100:"66", cost3_200:"66", cost3_300:"66", cost3_400:"66", cost3_500:"76", cost4_100:"76", cost4_200:"76", cost4_300:"76", cost4_400:"76", cost4_500:"86", cost5_100:"86", cost5_200:"86", cost5_300:"86", cost5_400:"86", cost5_500:"96"},
+            { cardName:"运满满大满卡", cost1_100:"96", cost1_200:"96", cost1_300:"96", cost1_400:"96", cost1_500:"96", cost2_100:"96", cost2_200:"96", cost2_300:"96", cost2_400:"96", cost2_500:"96", cost3_100:"96", cost3_200:"96", cost3_300:"96", cost3_400:"96", cost3_500:"96", cost4_100:"96", cost4_200:"96", cost4_300:"96", cost4_400:"96", cost4_500:"96", cost5_100:"96", cost5_200:"96", cost5_300:"96", cost5_400:"96", cost5_500:"96"},
+            { cardName:"各大视频APP20元畅视卡", cost1_100:"45", cost1_200:"55", cost1_300:"65", cost1_400:"75", cost1_500:"85", cost2_100:"60", cost2_200:"70", cost2_300:"80", cost2_400:"90", cost2_500:"100", cost3_100:"75", cost3_200:"85", cost3_300:"95", cost3_400:"105", cost3_500:"115", cost4_100:"90", cost4_200:"100", cost4_300:"110", cost4_400:"120", cost4_500:"130", cost5_100:"105", cost5_200:"115", cost5_300:"125", cost5_400:"135", cost5_500:"145"},
+            { cardName:"各大视频APP50元畅视卡", cost1_100:"60", cost1_200:"70", cost1_300:"80", cost1_400:"90", cost1_500:"100", cost2_100:"60", cost2_200:"70", cost2_300:"80", cost2_400:"90", cost2_500:"100", cost3_100:"60", cost3_200:"70", cost3_300:"80", cost3_400:"90", cost3_500:"100", cost4_100:"75", cost4_200:"85", cost4_300:"95", cost4_400:"105", cost4_500:"115", cost5_100:"90", cost5_200:"100", cost5_300:"110", cost5_400:"120", cost5_500:"130"},
+            { cardName:"各大视频资讯APP内免流卡", cost1_100:"49", cost1_200:"59", cost1_300:"69", cost1_400:"79", cost1_500:"89", cost2_100:"49", cost2_200:"59", cost2_300:"69", cost2_400:"79", cost2_500:"89", cost3_100:"49", cost3_200:"59", cost3_300:"69", cost3_400:"79", cost3_500:"89", cost4_100:"49", cost4_200:"59", cost4_300:"69", cost4_400:"79", cost4_500:"89", cost5_100:"49", cost5_200:"59", cost5_300:"69", cost5_400:"79", cost5_500:"89"}
+         ];
+         // Creation of first grid store
+         var gridStore = Ext.create('Ext.data.Store', {
+         model: 'StudentDataModel',
+         data: myData
+         });
+         // Creation of first grid
+         Ext.create('Ext.grid.Panel', {
+            id                : 'gridId',
+            store             : gridStore,
+            stripeRows        : true,
+            title             : '联通合作卡资费一览表', // Title for the grid
+            renderTo          :'gridDiv', // Div id where the grid has to be rendered
+            width             : totalWidth,
+            collapsible       : true, // property to collapse grid
+            enableColumnMove  :true, // property which alllows column to move to different position by dragging that column.
+            enableColumnResize:true, // property which allows to resize column run time.
+            columns           :
+               [{ 
+                  header: "卡名",
+                  dataIndex: 'cardName',  
+                  id : 'cardName',    
+                  flex:  1,      // property defines the amount of space this column is going to take in the grid container with respect to all.  
+                  sortable: true, // property to sort grid column data. 
+                  hideable: true  // property which allows column to be hidden run time on user request.
+               },{
+                  header: "1G 100分钟", 
+                  dataIndex: 'cost1_100',
+                  flex: .5, 
+                  sortable: true,
+                  hideable: false // this column will not be available to be hidden.
+               },{
+                  header: "1G 200分钟", 
+                  dataIndex: 'cost1_200',
+                  flex: .5, 
+                  sortable: true,
+                  hideable: false // this column will not be available to be hidden.
+               },{
+                  header: "1G 300分钟", 
+                  dataIndex: 'cost1_300',
+                  flex: .5, 
+                  sortable: true,
+                  hideable: false // this column will not be available to be hidden.
+               },{
+                  header: "1G 400分钟", 
+                  dataIndex: 'cost1_400',
+                  flex: .5, 
+                  sortable: true,
+                  hideable: false // this column will not be available to be hidden.
+               },{
+                  header: "1G 500分钟", 
+                  dataIndex: 'cost1_500',
+                  flex: .5, 
+                  sortable: true,
+                  hideable: false // this column will not be available to be hidden.
+               },{
+                  header: "2G 100分钟", 
+                  dataIndex: 'cost2_100',
+                  flex: .5, 
+                  sortable: true,
+                  hideable: false // this column will not be available to be hidden.
+               },{
+                  header: "2G 200分钟", 
+                  dataIndex: 'cost2_200',
+                  flex: .5, 
+                  sortable: true,
+                  hideable: false // this column will not be available to be hidden.
+               },{
+                  header: "2G 300分钟", 
+                  dataIndex: 'cost2_300',
+                  flex: .5, 
+                  sortable: true,
+                  hideable: false // this column will not be available to be hidden.
+               },{
+                  header: "2G 400分钟", 
+                  dataIndex: 'cost2_400',
+                  flex: .5, 
+                  sortable: true,
+                  hideable: false // this column will not be available to be hidden.
+               },{
+                  header: "2G 500分钟", 
+                  dataIndex: 'cost2_500',
+                  flex: .5, 
+                  sortable: true,
+                  hideable: false // this column will not be available to be hidden.
+               },{
+                  header: "3G 100分钟", 
+                  dataIndex: 'cost3_100',
+                  flex: .5, 
+                  sortable: true,
+                  hideable: false // this column will not be available to be hidden.
+               },{
+                  header: "3G 200分钟", 
+                  dataIndex: 'cost3_200',
+                  flex: .5, 
+                  sortable: true,
+                  hideable: false // this column will not be available to be hidden.
+               },{
+                  header: "3G 300分钟", 
+                  dataIndex: 'cost3_300',
+                  flex: .5, 
+                  sortable: true,
+                  hideable: false // this column will not be available to be hidden.
+               },{
+                  header: "3G 400分钟", 
+                  dataIndex: 'cost3_400',
+                  flex: .5, 
+                  sortable: true,
+                  hideable: false // this column will not be available to be hidden.
+               },{
+                  header: "3G 500分钟", 
+                  dataIndex: 'cost3_500',
+                  flex: .5, 
+                  sortable: true,
+                  hideable: false // this column will not be available to be hidden.
+               },{
+                  header: "4G 100分钟", 
+                  dataIndex: 'cost4_100',
+                  flex: .5, 
+                  sortable: true,
+                  hideable: false // this column will not be available to be hidden.
+               },{
+                  header: "4G 200分钟", 
+                  dataIndex: 'cost4_200',
+                  flex: .5, 
+                  sortable: true,
+                  hideable: false // this column will not be available to be hidden.
+               },{
+                  header: "4G 300分钟", 
+                  dataIndex: 'cost4_300',
+                  flex: .5, 
+                  sortable: true,
+                  hideable: false // this column will not be available to be hidden.
+               },{
+                  header: "4G 400分钟", 
+                  dataIndex: 'cost4_400',
+                  flex: .5, 
+                  sortable: true,
+                  hideable: false // this column will not be available to be hidden.
+               },{
+                  header: "4G 500分钟", 
+                  dataIndex: 'cost4_500',
+                  flex: .5, 
+                  sortable: true,
+                  hideable: false // this column will not be available to be hidden.
+               }
+               ,{
+                  header: "5G 100分钟", 
+                  dataIndex: 'cost5_100',
+                  flex: .5, 
+                  sortable: true,
+                  hideable: false // this column will not be available to be hidden.
+               },{
+                  header: "5G 200分钟", 
+                  dataIndex: 'cost5_200',
+                  flex: .5, 
+                  sortable: true,
+                  hideable: false // this column will not be available to be hidden.
+               },{
+                  header: "5G 300分钟", 
+                  dataIndex: 'cost5_300',
+                  flex: .5, 
+                  sortable: true,
+                  hideable: false // this column will not be available to be hidden.
+               },{
+                  header: "5G 400分钟", 
+                  dataIndex: 'cost5_400',
+                  flex: .5, 
+                  sortable: true,
+                  hideable: false // this column will not be available to be hidden.
+               },{
+                  header: "5G 500分钟", 
+                  dataIndex: 'cost5_500',
+                  flex: .5, 
+                  sortable: true,
+                  hideable: false // this column will not be available to be hidden.
+               }]
+         });
+      });
+   </script>
+</head>
+<body>
+   <div id = "gridDiv"></div>
+</body>
+</html>

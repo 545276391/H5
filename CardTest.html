@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/extjs/6.0.0/classic/theme-classic/resources/theme-classic-all.css" rel="stylesheet" />
+   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/extjs/6.0.0/ext-all.js"></script>
+   <script type="text/javascript">
+   
+   let totalWidth = (document.documentElement.scrollWidth>document.documentElement.clientWidth) 
+	? document.documentElement.scrollWidth : document.documentElement.clientWidth;//获取屏幕的宽度 
+
+  const DAILY = 30;
+  const MONTHLY = 1;
+	
+	function Card(base_cost,flow_province,flow_country,call_count,flow_province_unit_price,flow_country_unit_price,call_unit_price,card_type){
+		
+		this.base_cost = base_cost;
+	    this.getBaseCost = function(){
+	      return this.base_cost;
+	    }
+	    
+	    this.flow_province = flow_province;
+	    this.getFlowProvince = function(){
+		      return this.flow_province;
+		    }
+	    
+	    this.flow_country = flow_country;
+	    this.getFlowCountry = function(){
+		      return this.flow_country;
+		    }
+	    
+	    this.call_count = call_count;
+	    this.getCallCount = function(){
+		      return this.call_count;
+		    }
+	    
+	    this.flow_province_unit_price = flow_province_unit_price;
+	    this.getFlowProvinceUnitPrice = function(){
+		      return this.flow_province_unit_price;
+		    }
+	    
+	    this.flow_country_unit_price = flow_country_unit_price;
+	    this.getFlowCountryUnitPrice = function(){
+		      return this.flow_country_unit_price;
+		    }
+	    
+	    this.call_unit_price = call_unit_price;
+	    this.getCallUnitPrice = function(){
+		      return this.call_unit_price;
+		    }
+
+      this.card_type = card_type;
+      this.getCardType = function(){
+        return this.card_type;
+      }
+	}
+
+  let reg1 = /^(0|([1-9]\d*))(\.\d+)?$/;
+  let reg2 = /^[1-9]\d*$/;
+
+  let forecast_flow_count = parseFloat(prompt('请输入预计每月使用的流量（GB）', '2'));
+  
+  while(!reg1.test(forecast_flow_count)){
+    alert("亲！别乱输入！");
+    forecast_flow_count = parseFloat(prompt('请输入预计每月使用的流量（GB）', '2'));
+  }
+
+  let forecast_call_count = parseFloat(prompt('请输入预计的月通话时长（分钟）', '500'));
+
+  while(!reg2.test(forecast_call_count)){
+    alert("亲！能好好输入吗？");
+    forecast_call_count = parseFloat(prompt('请输入预计的月通话时长（分钟）', '500'));
+  }
+
+  
+	
+	let tencent_big_king_card = new Card(19,0,0,0,1,2,0.1,DAILY);
+	let tencent_heaven_king_card = new Card(59,0,0,500,1,2,0.1,DAILY);
+	let alipay_small_baby_plus_card = new Card(16,0,1,0,15,15,0.1,MONTHLY);
+	let alipay_big_baby_card = new Card(36,0,2,100,10,10,0.1,MONTHLY);
+	let alipay_sesame_icecream_card = new Card(199,0,40,1000,0,0,0,MONTHLY);
+  let alipay_flow_redpacket_card = new Card(9,0,0.3,0,7.5,7.5,0.075,MONTHLY);
+  let alipay_media_redpacket_card = new Card(9,0,0,0,7.5,7.5,0.075,MONTHLY);
+  let taobao_wonderful_tao_card = new Card(56,0,3,300,10,10,0.1,MONTHLY);
+  let dingding_silver_card = new Card(29,0.75,0.75,50,100,100,0.1,MONTHLY);
+  let dingding_gold_card = new Card(49,1.5,1.5,175,100,100,0.1,MONTHLY);
+  let dingding_diamonds_card = new Card(99,4,4,500,100,100,0.1,MONTHLY);
+  let jd_small_stronger_card = new Card(16,0,1,0,15,15,0.15,MONTHLY);
+  let jd_big_stronger_card = new Card(56,0,3,300,10,10,0.1,MONTHLY);
+  let baidu_small_god_card = new Card(28,0,1,100,15,15,0.1,MONTHLY);
+  let baidu_goddess_card = new Card(37,0,1,200,10,10,0.1,MONTHLY);
+  let baidu_big_god_card = new Card(198,0,20,1000,1,1,0.1,MONTHLY);
+  let baidu_small_sage_card = new Card(9,0,0,0,1,15,0.1,DAILY);
+  let baidu_big_sage_card = new Card(19,0,1,0,1,10,0.1,DAILY);
+  let baidu_beyond_sage_card = new Card(59,0,4,200,1,10,0.1,DAILY);
+  let mi_29_monthly_card = new Card(29,0,2,0,10,10,0.1,MONTHLY);
+  let mi_59_monthly_card = new Card(59,0,4,200,10,10,0.1,MONTHLY);
+  let mi_1_daily_card = new Card(5,0,0,0,1,15,0.1,DAILY);
+  let mi_3_daily_card = new Card(5,0,0,0,3,15,0.1,DAILY);
+  let weibo_v_plus_card = new Card(19,0,1,0,12,12,0.1,MONTHLY);
+  let weibo_big_v_card = new Card(69,0,3,300,10,10,0.1,MONTHLY);
+  let weibo_gold_v_card = new Card(199,0,20,1000,1,1,0.1,MONTHLY);
+  let bilibili_22_card = new Card(22,0,1,0,1,2,0.1,DAILY);
+  let bilibili_33_card = new Card(33,0,2,0,1,2,0.1,DAILY);
+  let bilibili_small_tv_card = new Card(66,0,4,200,1,2,0.1,DAILY);
+  let inke_small_in_card = new Card(29,0,1,0,1,2,0.1,DAILY);
+  let inke_big_in_card = new Card(59,0,3,200,1,2,0.1,DAILY);
+  let huajiao_small_huajiao_card = new Card(29,0,2,0,1,1,0.1,DAILY);
+  let huajiao_big_huajiao_card = new Card(59,0,4,200,1,1,0.1,DAILY);
+  let youkutudou_small_cool_card = new Card(9,0,0,0,1,3,0.1,DAILY);
+  let youkutudou_big_cool_card = new Card(29,0,2,0,1,2,0.1,DAILY);
+  let icbc_dream_e_card = new Card(19,0,2,0,10,10,0.1,MONTHLY);
+  let icbc_big_e_card = new Card(89,0,6,600,10,10,0.1,MONTHLY);
+  let cmbchina_small_solicit_card = new Card(36,0,2,100,10,10,0.1,MONTHLY);
+  let cmbchina_big_solicit_card = new Card(96,0,6,600,10,10,0.1,MONTHLY);
+  let spdb_small_develop_card = new Card(36,0,2,100,10,10,0.1,MONTHLY);
+  let spdb_big_develop_card = new Card(96,0,6,600,10,10,0.1,MONTHLY);
+  let mucfc_mu_bull_card = new Card(39,0,2,150,10,10,0.1,MONTHLY);
+  let jqka10_small_flush_card = new Card(28,0,2,0,10,10,0.1,MONTHLY);
+  let jqka10_big_flush_card = new Card(58,0,3,300,10,10,0.1,MONTHLY);
+  let jqka10_heaven_flush_card = new Card(118,0,8,800,10,10,0.1,MONTHLY);
+  let didi_mini_orange_card = new Card(26,0,2,0,10,10,0.1,MONTHLY);
+  let didi_small_orange_card = new Card(56,0,3,300,10,10,0.1,MONTHLY);
+  let didi_big_orange_card = new Card(96,0,6,600,10,10,0.1,MONTHLY);
+  let didi_small_king_card = new Card(58,2,1,500,100,100,0.1,MONTHLY);
+  let didi_big_king_card = new Card(98,4,2,1000,100,100,0.1,MONTHLY);
+  let toutiao_know_me_card = new Card(29,0,2,0,10,10,0.1,MONTHLY);
+  let toutiao_know_me_plus_card = new Card(59,0,4,200,10,10,0.1,MONTHLY);
+  let tv189_kankan_card = new Card(6,0,0,0,1,100,0.1,DAILY);
+  let eleme_small_e_card = new Card(56,0,3,300,10,10,0.1,MONTHLY);
+  let eleme_big_e_card = new Card(96,0,6,600,10,10,0.1,MONTHLY);
+  let eleme_fengniao_card = new Card(56,2,1,400,10,10,0.1,MONTHLY);
+  let eleme_fengwang_card = new Card(96,4,2,1000,10,10,0.1,MONTHLY);
+  let meituan_small_mei_card = new Card(36,0,2,100,10,10,0.1,MONTHLY);
+  let meituan_big_mei_card = new Card(96,0,6,600,10,10,0.1,MONTHLY);
+  let ymm56_small_man_card = new Card(56,0,2,400,10,10,0.1,MONTHLY);
+  let ymm56_big_man_card = new Card(96,0,5,800,10,10,0.1,MONTHLY);
+  let media_app_20_card = new Card(20,0,0,0,15,15,0.1,MONTHLY);
+  let media_app_50_card = new Card(50,0,3,0,15,15,0.1,MONTHLY);
+	let media_information_app_card = new Card(9,0,0,0,1,100,0.1,DAILY);
+
+  function showCardName(index){
+      switch(index){
+        case 0:
+          return tencent_big_king_card;
+        case 1:
+          return tencent_heaven_king_card;
+        case 2:
+          return alipay_small_baby_plus_card;
+        case 3:
+          return alipay_big_baby_card;
+        case 4:
+          return alipay_sesame_icecream_card;
+        case 5:
+          return alipay_flow_redpacket_card;
+        case 6:
+          return alipay_media_redpacket_card;
+        case 7:
+          return taobao_wonderful_tao_card;
+        case 8:
+          return dingding_silver_card;
+        case 9:
+          return dingding_gold_card;
+        case 10:
+          return dingding_diamonds_card;
+        case 11:
+          return jd_small_stronger_card;
+        case 12:
+          return jd_big_stronger_card;
+        case 13:
+          return baidu_small_god_card;
+        case 14:
+          return baidu_goddess_card;
+        case 15:
+          return baidu_big_god_card;
+        case 16:
+          return baidu_small_sage_card;
+        case 17:
+          return baidu_big_sage_card;
+        case 18:
+          return baidu_beyond_sage_card;
+        case 19:
+          return mi_29_monthly_card;
+        case 20:
+          return mi_59_monthly_card;
+        case 21:
+          return mi_1_daily_card;
+        case 22:
+          return mi_3_daily_card;
+        case 23:
+          return weibo_v_plus_card;
+        case 24:
+          return weibo_big_v_card;
+        case 25:
+          return weibo_gold_v_card;
+        case 26:
+          return bilibili_22_card;
+        case 27:
+          return bilibili_33_card;
+        case 28:
+          return bilibili_small_tv_card;
+        case 29:
+          return inke_small_in_card;
+        case 30:
+          return inke_big_in_card;
+        case 31:
+          return huajiao_small_huajiao_card;
+        case 32:
+          return huajiao_big_huajiao_card;
+        case 33:
+          return youkutudou_small_cool_card;
+        case 34:
+          return youkutudou_big_cool_card;
+        case 35:
+          return icbc_dream_e_card;
+        case 36:
+          return icbc_big_e_card;
+        case 37:
+          return cmbchina_small_solicit_card;
+        case 38:
+          return cmbchina_big_solicit_card;
+        case 39:
+          return spdb_small_develop_card;
+        case 40:
+          return spdb_big_develop_card;
+        case 41:
+          return mucfc_mu_bull_card;
+        case 42:
+          return jqka10_small_flush_card;
+        case 43:
+          return jqka10_big_flush_card;
+        case 44:
+          return jqka10_heaven_flush_card;
+        case 45:
+          return didi_mini_orange_card;
+        case 46:
+          return didi_small_orange_card;
+        case 47:
+          return didi_big_orange_card;
+        case 48:
+          return didi_small_king_card;
+        case 49:
+          return didi_big_king_card;
+        case 50:
+          return toutiao_know_me_card;
+        case 51:
+          return toutiao_know_me_plus_card;
+        case 52:
+          return tv189_kankan_card;
+        case 53:
+          return eleme_small_e_card;
+        case 54:
+          return eleme_big_e_card;
+        case 55:
+          return eleme_fengniao_card;
+        case 56:
+          return eleme_fengwang_card;
+        case 57:
+          return meituan_small_mei_card;
+        case 58:
+          return meituan_big_mei_card;
+        case 59:
+          return ymm56_small_man_card;
+        case 60:
+          return ymm56_big_man_card;
+        case 61:
+          return media_app_20_card;
+        case 62:
+          return media_app_50_card;
+        case 63:
+          return media_information_app_card;
+        default:
+          return "?";
+      }
+  }
+	
+	function CalculationCallCost(card){
+		if(card.call_count>forecast_call_count){
+  			return 0;
+	  }else {
+			  return (forecast_call_count-card.call_count)*card.call_unit_price;
+	  } 
+	}
+	
+	function CalculationFlowCost(card){
+		/*if(card.card_type == DAILY){
+  			return DAILY * card.flow_province_unit_price;
+		}else if(card.flow_country>forecast_flow_count){
+  			return 0;
+	  }else if(card.flow_province>forecast_flow_count-card.flow_country){
+    		return 0;
+	  }else{
+    		return (forecast_flow_count-card.flow_country-card.flow_province)*card.flow_province_unit_price;
+	  }*/
+    if(card.flow_country >= forecast_flow_count){
+        return 0;
+    }else if(card.flow_province >= forecast_flow_count-card.flow_country){
+        return 0;
+    }else if(card.card_type == DAILY){
+        return DAILY * card.flow_province_unit_price;
+    }else{
+        return (forecast_flow_count-card.flow_country-card.flow_province)*card.flow_province_unit_price;
+    }
+		
+	}
+
+	function CalculationSumCost(card){
+		return CalculationFlowCost(card) + CalculationCallCost(card) + card.base_cost;
+	}
+	
+  
+  
+
+  // Creation of data model
+  Ext.define('StudentDataModel', {
+     extend: 'Ext.data.Model',
+     fields: [
+     {name: 'cardGroup', mapping : 'cardGroup'},
+     {name: 'cardName', mapping : 'cardName'},
+     {name: 'baseCost', mapping : 'baseCost'},
+     {name: 'flowProvince', mapping : 'flowProvince'},
+     {name: 'flowCountry', mapping : 'flowCountry'},
+     {name: 'call', mapping : 'call'},
+     {name: 'flowCost', mapping : 'flowCost'},
+     {name: 'callCost', mapping : 'callCost'},
+     {name: 'sumCost', mapping : 'sumCost'}
+     ]
+  });
+
+      Ext.onReady(function(){
+         // Store data
+         let myData = [
+            { cardGroup : "腾讯", cardName : "大王卡"},
+            { cardGroup : "腾讯", cardName : "天王卡"},
+            { cardGroup : "支付宝", cardName : "小宝+卡"},
+            { cardGroup : "支付宝", cardName : "大宝卡"},
+            { cardGroup : "支付宝", cardName : "芝麻冰淇淋卡"},
+            { cardGroup : "支付宝", cardName : "流量红包卡"},
+            { cardGroup : "支付宝", cardName : "视频红包卡"},
+            { cardGroup : "淘宝", cardName : "畅淘卡"},
+            { cardGroup : "钉钉", cardName : "银卡"},
+            { cardGroup : "钉钉", cardName : "金卡"},
+            { cardGroup : "钉钉", cardName : "钻石卡"},
+            { cardGroup : "京东", cardName : "小强卡"},
+            { cardGroup : "京东", cardName : "大强卡"},
+            { cardGroup : "百度", cardName : "小神卡"},
+            { cardGroup : "百度", cardName : "女神卡"},
+            { cardGroup : "百度", cardName : "大神卡"},
+            { cardGroup : "百度", cardName : "小圣卡"},
+            { cardGroup : "百度", cardName : "大圣卡"},
+            { cardGroup : "百度", cardName : "超圣卡"},
+            { cardGroup : "小米", cardName : "29元月租米粉卡"},
+            { cardGroup : "小米", cardName : "59元月租米粉卡"},
+            { cardGroup : "小米", cardName : "1元日租米粉卡"},
+            { cardGroup : "小米", cardName : "不限量日租米粉卡"},
+            { cardGroup : "新浪微博", cardName : "V+卡"},
+            { cardGroup : "新浪微博", cardName : "大V卡"},
+            { cardGroup : "新浪微博", cardName : "金V卡"},
+            { cardGroup : "哔哩哔哩", cardName : "22卡"},
+            { cardGroup : "哔哩哔哩", cardName : "33卡"},
+            { cardGroup : "哔哩哔哩", cardName : "小电视卡"},
+            { cardGroup : "映客直播", cardName : "小映卡"},
+            { cardGroup : "映客直播", cardName : "大映卡"},
+            { cardGroup : "花椒直播", cardName : "小花椒卡"},
+            { cardGroup : "花椒直播", cardName : "大花椒卡"},
+            { cardGroup : "优酷土豆", cardName : "小酷卡"},
+            { cardGroup : "优酷土豆", cardName : "大酷卡"},
+            { cardGroup : "工商银行", cardName : "梦想e卡"},
+            { cardGroup : "工商银行", cardName : "大e卡"},
+            { cardGroup : "招商银行", cardName : "小招卡"},
+            { cardGroup : "招商银行", cardName : "大招卡"},
+            { cardGroup : "浦发银行", cardName : "小发卡"},
+            { cardGroup : "浦发银行", cardName : "大发卡"},
+            { cardGroup : "招联金融", cardName : "招联牛卡"},
+            { cardGroup : "同花顺", cardName : "小顺卡"},
+            { cardGroup : "同花顺", cardName : "大顺卡"},
+            { cardGroup : "同花顺", cardName : "天顺卡"},
+            { cardGroup : "滴滴", cardName : "mini橙卡"},
+            { cardGroup : "滴滴", cardName : "小橙卡"},
+            { cardGroup : "滴滴", cardName : "大橙卡"},
+            { cardGroup : "滴滴", cardName : "小王卡"},
+            { cardGroup : "滴滴", cardName : "大王卡"},
+            { cardGroup : "今日头条", cardName : "懂我卡"},
+            { cardGroup : "今日头条", cardName : "懂我卡Plus"},
+            { cardGroup : "天翼资讯", cardName : "看看卡"},
+            { cardGroup : "饿了么", cardName : "小饿卡"},
+            { cardGroup : "饿了么", cardName : "大饿卡"},
+            { cardGroup : "饿了么", cardName : "蜂鸟卡"},
+            { cardGroup : "饿了么", cardName : "蜂王卡"},
+            { cardGroup : "美团", cardName : "小美卡"},
+            { cardGroup : "美团", cardName : "大美卡"},
+            { cardGroup : "运满满", cardName : "小满卡"},
+            { cardGroup : "运满满", cardName : "大满卡"},
+            { cardGroup : "各大视频", cardName : "畅视20元卡"},
+            { cardGroup : "各大视频", cardName : "畅视50元卡"}, 
+            { cardGroup : "各大视频资讯APP", cardName : "APP内免流卡"}
+         ];
+         // Creation of first grid store
+         let gridStore = Ext.create('Ext.data.Store', {
+         model: 'StudentDataModel',
+         data: myData
+         });
+         // Creation of first grid
+         Ext.create('Ext.grid.Panel', {
+            id                : 'gridId',
+            store             : gridStore,
+            stripeRows        : true,
+            title             : '联通合作卡资费对比', // Title for the grid
+            renderTo          :'gridDiv', // Div id where the grid has to be rendered
+            width             : totalWidth,
+            collapsible       : true, // to collapse grid
+            enableColumnMove  :true, // which alllows column to move to different position by dragging that column.
+            enableColumnResize:true, // which allows to resize column run time.
+            columns           :
+                [{ 
+                    header: "合作方",
+                    dataIndex: 'cardGroup',	
+                    id : 'cardGroup',    
+                    flex:  1,  		 // defines the amount of space this column is going to take in the grid container with respect to all.	
+                    sortable: false, // to sort grid column data. 
+                    hideable: true  // which allows column to be hidden run time on user request.
+                },{
+                    header: "卡名", 
+                    dataIndex: 'cardName',
+                    flex: 1, 
+                    sortable: false,
+                    hideable: false // this column will not be available to be hidden.
+                },{
+                    header: "月租",
+                    dataIndex: 'baseCost',
+                    flex: .5, 
+                    sortable: false, 
+                    // renderer is used to manipulate data based on some conditions here who ever has marks greater than 75 will be displayed as 'Distinction' else 'Non Distinction'.
+                    renderer :  function (value, metadata, record, rowIndex, colIndex, store) {
+                  	  return showCardName(rowIndex).base_cost;
+                    }
+                },{
+                    header: "省内流量",
+                    dataIndex: 'flowProvince',
+                    flex: .5, 
+                    sortable: false, 
+                    // renderer is used to manipulate data based on some conditions here who ever has marks greater than 75 will be displayed as 'Distinction' else 'Non Distinction'.
+                    renderer :  function (value, metadata, record, rowIndex, colIndex, store) {
+                      return showCardName(rowIndex).flow_province;
+                    }
+                },{
+                    header: "国内流量",
+                    dataIndex: 'flowCountry',
+                    flex: .5, 
+                    sortable: false, 
+                    // renderer is used to manipulate data based on some conditions here who ever has marks greater than 75 will be displayed as 'Distinction' else 'Non Distinction'.
+                    renderer :  function (value, metadata, record, rowIndex, colIndex, store) {
+                      return showCardName(rowIndex).flow_country;
+                    }
+                },{
+                    header: "语音",
+                    dataIndex: 'call',
+                    flex: .5, 
+                    sortable: false, 
+                    // renderer is used to manipulate data based on some conditions here who ever has marks greater than 75 will be displayed as 'Distinction' else 'Non Distinction'.
+                    renderer :  function (value, metadata, record, rowIndex, colIndex, store) {
+                      return showCardName(rowIndex).call_count;
+                    }
+            	  },{
+                   	header: "流量费用",
+                   	dataIndex: 'flowCost',
+                   	flex: .5, 
+                   	sortable: false, 
+                  	// renderer is used to manipulate data based on some conditions here who ever has marks greater than 75 will be displayed as 'Distinction' else 'Non Distinction'.
+                   	renderer :  function (value, metadata, record, rowIndex, colIndex, store) {
+                      return CalculationFlowCost(showCardName(rowIndex));
+                 		}
+            	  },{
+                		header: "通话费用",
+                 		dataIndex: 'callCost',
+                  	flex: .5, 
+                  	sortable: false, 
+                  	// renderer is used to manipulate data based on some conditions here who ever has marks greater than 75 will be displayed as 'Distinction' else 'Non Distinction'.
+                  	renderer :  function (value, metadata, record, rowIndex, colIndex, store) {
+                      return CalculationCallCost(showCardName(rowIndex));
+                  	}
+          		  },{
+        	          header: "总费用",
+        	          dataIndex: 'sumCost',
+        	          flex: .5, 
+        	          sortable: false, 
+        	          // renderer is used to manipulate data based on some conditions here who ever has marks greater than 75 will be displayed as 'Distinction' else 'Non Distinction'.
+        	          renderer :  function (value, metadata, record, rowIndex, colIndex, store) {
+                      return CalculationSumCost(showCardName(rowIndex));
+        	          }
+        	   	  }]
+          });
+      });
+   </script>
+</head>
+<body>
+   <div id = "gridDiv"></div>
+</body>
+</html>
