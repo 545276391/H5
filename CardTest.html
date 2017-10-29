@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-   <link href="https://cdnjs.cloudflare.com/ajax/libs/extjs/6.0.0/classic/theme-classic/resources/theme-classic-all.css" rel="stylesheet" />
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/extjs/6.0.0/classic/theme-triton/resources/theme-triton-all.css" rel="stylesheet" />
    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/extjs/6.0.0/ext-all.js"></script>
    <script type="text/javascript">
    
@@ -75,17 +75,22 @@
 	
 	let tencent_big_king_card = new Card(19,0,0,0,1,2,0.1,DAILY);
 	let tencent_heaven_king_card = new Card(59,0,0,500,1,2,0.1,DAILY);
+  let alibaba_small_fish_card = new Card(9,0,0,0,1,2,0.1,DAILY);
+  let alibaba_big_fish_card = new Card(19,0,1,100,1,2,0.1,DAILY);
 	let alipay_small_baby_plus_card = new Card(16,0,1,0,15,15,0.1,MONTHLY);
 	let alipay_big_baby_card = new Card(36,0,2,100,10,10,0.1,MONTHLY);
 	let alipay_sesame_icecream_card = new Card(199,0,40,1000,0,0,0,MONTHLY);
   let alipay_flow_redpacket_card = new Card(9,0,0.3,0,7.5,7.5,0.075,MONTHLY);
   let alipay_media_redpacket_card = new Card(9,0,0,0,7.5,7.5,0.075,MONTHLY);
+  let fliggy_small_card = new Card(19,0,2,0,15,15,0.1,MONTHLY);
+  let fliggy_big_card = new Card(39,0,3,100,10,10,0.1,MONTHLY);
   let taobao_wonderful_tao_card = new Card(56,0,3,300,10,10,0.1,MONTHLY);
   let dingding_silver_card = new Card(29,0.75,0.75,50,100,100,0.1,MONTHLY);
   let dingding_gold_card = new Card(49,1.5,1.5,175,100,100,0.1,MONTHLY);
   let dingding_diamonds_card = new Card(99,4,4,500,100,100,0.1,MONTHLY);
   let jd_small_stronger_card = new Card(16,0,1,0,15,15,0.15,MONTHLY);
   let jd_big_stronger_card = new Card(56,0,3,300,10,10,0.1,MONTHLY);
+  let jd_redpacket_card = new Card(9,0,0.3,0,7.5,7.5,0.075,MONTHLY);
   let baidu_small_god_card = new Card(28,0,1,100,15,15,0.1,MONTHLY);
   let baidu_goddess_card = new Card(37,0,1,200,10,10,0.1,MONTHLY);
   let baidu_big_god_card = new Card(198,0,20,1000,1,1,0.1,MONTHLY);
@@ -106,14 +111,19 @@
   let inke_big_in_card = new Card(59,0,3,200,1,2,0.1,DAILY);
   let huajiao_small_huajiao_card = new Card(29,0,2,0,1,1,0.1,DAILY);
   let huajiao_big_huajiao_card = new Card(59,0,4,200,1,1,0.1,DAILY);
+  let huajiao_pollen_card = new Card(10,0,0,0,2,100,0.1,DAILY);
   let youkutudou_small_cool_card = new Card(9,0,0,0,1,3,0.1,DAILY);
   let youkutudou_big_cool_card = new Card(29,0,2,0,1,2,0.1,DAILY);
+  let mgtv_small_mang_card = new Card(9,0,0,0,1,10,0.1,DAILY);
+  let mgtv_big_mang_card = new Card(29,0,2,0,1,10,0.1,DAILY);
   let icbc_dream_e_card = new Card(19,0,2,0,10,10,0.1,MONTHLY);
   let icbc_big_e_card = new Card(89,0,6,600,10,10,0.1,MONTHLY);
   let cmbchina_small_solicit_card = new Card(36,0,2,100,10,10,0.1,MONTHLY);
   let cmbchina_big_solicit_card = new Card(96,0,6,600,10,10,0.1,MONTHLY);
   let spdb_small_develop_card = new Card(36,0,2,100,10,10,0.1,MONTHLY);
   let spdb_big_develop_card = new Card(96,0,6,600,10,10,0.1,MONTHLY);
+  let hxb_small_xia_card = new Card(36,0,3,0,10,10,0.1,MONTHLY);
+  let hxb_big_xia_card = new Card(56,0,5,100,10,10,0.1,MONTHLY);
   let mucfc_mu_bull_card = new Card(39,0,2,150,10,10,0.1,MONTHLY);
   let jqka10_small_flush_card = new Card(28,0,2,0,10,10,0.1,MONTHLY);
   let jqka10_big_flush_card = new Card(58,0,3,300,10,10,0.1,MONTHLY);
@@ -134,8 +144,11 @@
   let meituan_big_mei_card = new Card(96,0,6,600,10,10,0.1,MONTHLY);
   let ymm56_small_man_card = new Card(56,0,2,400,10,10,0.1,MONTHLY);
   let ymm56_big_man_card = new Card(96,0,5,800,10,10,0.1,MONTHLY);
+  let woniu_small_card = new Card(19,0,1.5,0,1,12,0.1,DAILY);
+  let woniu_big_card = new Card(59,0,4,200,1,10,0.1,DAILY);
   let media_app_20_card = new Card(20,0,0,0,15,15,0.1,MONTHLY);
   let media_app_50_card = new Card(50,0,3,0,15,15,0.1,MONTHLY);
+  let sf_big_feng_card = new Card(46,0,4,100,10,10,0.1,MONTHLY);
 	let media_information_app_card = new Card(9,0,0,0,1,100,0.1,DAILY);
 
   function showCardName(index){
@@ -145,128 +158,154 @@
         case 1:
           return tencent_heaven_king_card;
         case 2:
-          return alipay_small_baby_plus_card;
+          return alibaba_small_fish_card;
         case 3:
-          return alipay_big_baby_card;
+          return alibaba_big_fish_card;
         case 4:
-          return alipay_sesame_icecream_card;
+          return alipay_small_baby_plus_card;
         case 5:
-          return alipay_flow_redpacket_card;
+          return alipay_big_baby_card;
         case 6:
-          return alipay_media_redpacket_card;
+          return alipay_sesame_icecream_card;
         case 7:
-          return taobao_wonderful_tao_card;
+          return alipay_flow_redpacket_card;
         case 8:
-          return dingding_silver_card;
+          return alipay_media_redpacket_card;
         case 9:
-          return dingding_gold_card;
+          return fliggy_small_card;
         case 10:
-          return dingding_diamonds_card;
+          return fliggy_big_card;
         case 11:
-          return jd_small_stronger_card;
+          return taobao_wonderful_tao_card;
         case 12:
-          return jd_big_stronger_card;
+          return dingding_silver_card;
         case 13:
-          return baidu_small_god_card;
+          return dingding_gold_card;
         case 14:
-          return baidu_goddess_card;
+          return dingding_diamonds_card;
         case 15:
-          return baidu_big_god_card;
+          return jd_small_stronger_card;
         case 16:
-          return baidu_small_sage_card;
+          return jd_big_stronger_card;
         case 17:
-          return baidu_big_sage_card;
+          return jd_redpacket_card;
         case 18:
-          return baidu_beyond_sage_card;
+          return baidu_small_god_card;
         case 19:
-          return mi_29_monthly_card;
+          return baidu_goddess_card;
         case 20:
-          return mi_59_monthly_card;
+          return baidu_big_god_card;
         case 21:
-          return mi_1_daily_card;
+          return baidu_small_sage_card;
         case 22:
-          return mi_3_daily_card;
+          return baidu_big_sage_card;
         case 23:
-          return weibo_v_plus_card;
+          return baidu_beyond_sage_card;
         case 24:
-          return weibo_big_v_card;
+          return mi_29_monthly_card;
         case 25:
-          return weibo_gold_v_card;
+          return mi_59_monthly_card;
         case 26:
-          return bilibili_22_card;
+          return mi_1_daily_card;
         case 27:
-          return bilibili_33_card;
+          return mi_3_daily_card;
         case 28:
-          return bilibili_small_tv_card;
+          return weibo_v_plus_card;
         case 29:
-          return inke_small_in_card;
+          return weibo_big_v_card;
         case 30:
-          return inke_big_in_card;
+          return weibo_gold_v_card;
         case 31:
-          return huajiao_small_huajiao_card;
+          return bilibili_22_card;
         case 32:
-          return huajiao_big_huajiao_card;
+          return bilibili_33_card;
         case 33:
-          return youkutudou_small_cool_card;
+          return bilibili_small_tv_card;
         case 34:
-          return youkutudou_big_cool_card;
+          return inke_small_in_card;
         case 35:
-          return icbc_dream_e_card;
+          return inke_big_in_card;
         case 36:
-          return icbc_big_e_card;
+          return huajiao_small_huajiao_card;
         case 37:
-          return cmbchina_small_solicit_card;
+          return huajiao_big_huajiao_card;
         case 38:
-          return cmbchina_big_solicit_card;
+          return huajiao_pollen_card;
         case 39:
-          return spdb_small_develop_card;
+          return youkutudou_small_cool_card;
         case 40:
-          return spdb_big_develop_card;
+          return youkutudou_big_cool_card;
         case 41:
-          return mucfc_mu_bull_card;
+          return mgtv_small_mang_card;
         case 42:
-          return jqka10_small_flush_card;
+          return mgtv_big_mang_card;
         case 43:
-          return jqka10_big_flush_card;
+          return icbc_dream_e_card;
         case 44:
-          return jqka10_heaven_flush_card;
+          return icbc_big_e_card;
         case 45:
-          return didi_mini_orange_card;
+          return cmbchina_small_solicit_card;
         case 46:
-          return didi_small_orange_card;
+          return cmbchina_big_solicit_card;
         case 47:
-          return didi_big_orange_card;
+          return spdb_small_develop_card;
         case 48:
-          return didi_small_king_card;
+          return spdb_big_develop_card;
         case 49:
-          return didi_big_king_card;
+          return hxb_small_xia_card;
         case 50:
-          return toutiao_know_me_card;
+          return hxb_big_xia_card;
         case 51:
-          return toutiao_know_me_plus_card;
+          return mucfc_mu_bull_card;
         case 52:
-          return tv189_kankan_card;
+          return jqka10_small_flush_card;
         case 53:
-          return eleme_small_e_card;
+          return jqka10_big_flush_card;
         case 54:
-          return eleme_big_e_card;
+          return jqka10_heaven_flush_card;
         case 55:
-          return eleme_fengniao_card;
+          return didi_mini_orange_card;
         case 56:
-          return eleme_fengwang_card;
+          return didi_small_orange_card;
         case 57:
-          return meituan_small_mei_card;
+          return didi_big_orange_card;
         case 58:
-          return meituan_big_mei_card;
+          return didi_small_king_card;
         case 59:
-          return ymm56_small_man_card;
+          return didi_big_king_card;
         case 60:
-          return ymm56_big_man_card;
+          return toutiao_know_me_card;
         case 61:
-          return media_app_20_card;
+          return toutiao_know_me_plus_card;
         case 62:
-          return media_app_50_card;
+          return tv189_kankan_card;
         case 63:
+          return eleme_small_e_card;
+        case 64:
+          return eleme_big_e_card;
+        case 65:
+          return eleme_fengniao_card;
+        case 66:
+          return eleme_fengwang_card;
+        case 67:
+          return meituan_small_mei_card;
+        case 68:
+          return meituan_big_mei_card;
+        case 69:
+          return ymm56_small_man_card;
+        case 70:
+          return ymm56_big_man_card;
+        case 71:
+          return woniu_small_card;
+        case 72:
+          return woniu_big_card;
+        case 73:
+          return media_app_20_card;
+        case 74:
+          return media_app_50_card;
+        case 75:
+          return sf_big_feng_card;
+        case 76:
           return media_information_app_card;
         default:
           return "?";
@@ -282,15 +321,6 @@
 	}
 	
 	function CalculationFlowCost(card){
-		/*if(card.card_type == DAILY){
-  			return DAILY * card.flow_province_unit_price;
-		}else if(card.flow_country>forecast_flow_count){
-  			return 0;
-	  }else if(card.flow_province>forecast_flow_count-card.flow_country){
-    		return 0;
-	  }else{
-    		return (forecast_flow_count-card.flow_country-card.flow_province)*card.flow_province_unit_price;
-	  }*/
     if(card.flow_country >= forecast_flow_count){
         return 0;
     }else if(card.flow_province >= forecast_flow_count-card.flow_country){
@@ -322,77 +352,92 @@
      {name: 'call', mapping : 'call'},
      {name: 'flowCost', mapping : 'flowCost'},
      {name: 'callCost', mapping : 'callCost'},
-     {name: 'sumCost', mapping : 'sumCost'}
+     {name: 'sumCost', mapping : 'sumCost'},
+     {name: 'tip', mapping : 'tip'},
      ]
   });
 
       Ext.onReady(function(){
+
          // Store data
          let myData = [
-            { cardGroup : "腾讯", cardName : "大王卡"},
-            { cardGroup : "腾讯", cardName : "天王卡"},
-            { cardGroup : "支付宝", cardName : "小宝+卡"},
-            { cardGroup : "支付宝", cardName : "大宝卡"},
-            { cardGroup : "支付宝", cardName : "芝麻冰淇淋卡"},
-            { cardGroup : "支付宝", cardName : "流量红包卡"},
-            { cardGroup : "支付宝", cardName : "视频红包卡"},
-            { cardGroup : "淘宝", cardName : "畅淘卡"},
-            { cardGroup : "钉钉", cardName : "银卡"},
-            { cardGroup : "钉钉", cardName : "金卡"},
-            { cardGroup : "钉钉", cardName : "钻石卡"},
-            { cardGroup : "京东", cardName : "小强卡"},
-            { cardGroup : "京东", cardName : "大强卡"},
-            { cardGroup : "百度", cardName : "小神卡"},
-            { cardGroup : "百度", cardName : "女神卡"},
-            { cardGroup : "百度", cardName : "大神卡"},
-            { cardGroup : "百度", cardName : "小圣卡"},
-            { cardGroup : "百度", cardName : "大圣卡"},
-            { cardGroup : "百度", cardName : "超圣卡"},
-            { cardGroup : "小米", cardName : "29元月租米粉卡"},
-            { cardGroup : "小米", cardName : "59元月租米粉卡"},
-            { cardGroup : "小米", cardName : "1元日租米粉卡"},
-            { cardGroup : "小米", cardName : "不限量日租米粉卡"},
-            { cardGroup : "新浪微博", cardName : "V+卡"},
-            { cardGroup : "新浪微博", cardName : "大V卡"},
-            { cardGroup : "新浪微博", cardName : "金V卡"},
-            { cardGroup : "哔哩哔哩", cardName : "22卡"},
-            { cardGroup : "哔哩哔哩", cardName : "33卡"},
-            { cardGroup : "哔哩哔哩", cardName : "小电视卡"},
-            { cardGroup : "映客直播", cardName : "小映卡"},
-            { cardGroup : "映客直播", cardName : "大映卡"},
-            { cardGroup : "花椒直播", cardName : "小花椒卡"},
-            { cardGroup : "花椒直播", cardName : "大花椒卡"},
-            { cardGroup : "优酷土豆", cardName : "小酷卡"},
-            { cardGroup : "优酷土豆", cardName : "大酷卡"},
-            { cardGroup : "工商银行", cardName : "梦想e卡"},
-            { cardGroup : "工商银行", cardName : "大e卡"},
-            { cardGroup : "招商银行", cardName : "小招卡"},
-            { cardGroup : "招商银行", cardName : "大招卡"},
-            { cardGroup : "浦发银行", cardName : "小发卡"},
-            { cardGroup : "浦发银行", cardName : "大发卡"},
-            { cardGroup : "招联金融", cardName : "招联牛卡"},
-            { cardGroup : "同花顺", cardName : "小顺卡"},
-            { cardGroup : "同花顺", cardName : "大顺卡"},
-            { cardGroup : "同花顺", cardName : "天顺卡"},
-            { cardGroup : "滴滴", cardName : "mini橙卡"},
-            { cardGroup : "滴滴", cardName : "小橙卡"},
-            { cardGroup : "滴滴", cardName : "大橙卡"},
-            { cardGroup : "滴滴", cardName : "小王卡"},
-            { cardGroup : "滴滴", cardName : "大王卡"},
-            { cardGroup : "今日头条", cardName : "懂我卡"},
-            { cardGroup : "今日头条", cardName : "懂我卡Plus"},
-            { cardGroup : "天翼资讯", cardName : "看看卡"},
-            { cardGroup : "饿了么", cardName : "小饿卡"},
-            { cardGroup : "饿了么", cardName : "大饿卡"},
-            { cardGroup : "饿了么", cardName : "蜂鸟卡"},
-            { cardGroup : "饿了么", cardName : "蜂王卡"},
-            { cardGroup : "美团", cardName : "小美卡"},
-            { cardGroup : "美团", cardName : "大美卡"},
-            { cardGroup : "运满满", cardName : "小满卡"},
-            { cardGroup : "运满满", cardName : "大满卡"},
-            { cardGroup : "各大视频", cardName : "畅视20元卡"},
-            { cardGroup : "各大视频", cardName : "畅视50元卡"}, 
-            { cardGroup : "各大视频资讯APP", cardName : "APP内免流卡"}
+            { cardGroup : "腾讯", cardName : "大王卡<br/>月租19元;<br/>省内流量1元/500M,省外2元/500M,0.1元/分钟", sumCost : CalculationSumCost(showCardName(0)), tip : "腾讯应用免流;<br/>第6个月起升级为省外1元/500M;<br/>一年后或预存300元升级为1元/G;<br/>首月免月租,首充50元及以上送50元"},
+            { cardGroup : "腾讯", cardName : "天王卡<br/>月租59元,含500分钟通话;<br/>省内流量1元/500M,省外2元/500M,0.1元/分钟", sumCost : CalculationSumCost(showCardName(1)), tip : "腾讯应用免流;<br/>第6个月起升级为省外1元/500M;<br/>首月免月租,首充50元及以上送50元"},
+            { cardGroup : "阿里文娱", cardName : "小鱼卡<br/>月租9元;<br/>省内流量1元800M,省外2元800M,0.1元/分钟", sumCost : CalculationSumCost(showCardName(2)), tip : "阿里文娱旗下应用免流(UC浏览器/优酷/虾米/高德/书旗);<br/>首月免月租,首充50元及以上送50元"},
+            { cardGroup : "阿里文娱", cardName : "大鱼卡<br/>月租19元,含100分钟通话、1G国内流量;<br/>省内流量1元800M,省外2元800M,0.1元/分钟", sumCost : CalculationSumCost(showCardName(3)), tip : "阿里文娱旗下应用免流(UC浏览器/优酷/虾米/高德/书旗);<br/>首月免月租,首充50元及以上送50元"},
+            { cardGroup : "支付宝", cardName : "小宝+卡<br/>月租16元,含1G国内流量;<br/>国内流量15元/G,0.1元/分钟", sumCost : CalculationSumCost(showCardName(4)), tip : "线下用支付宝买单每笔送20M国内流量,根据支付宝会员等级划分每月最高送若干(12/15/18/20)笔流量;<br/>首月免月租,首充19元得50元;<br/>激活当月及次月各送1G国内流量"},
+            { cardGroup : "支付宝", cardName : "大宝卡<br/>月租36元,含100分钟通话、2G国内流量;<br/>国内流量10元/G,0.1元/分钟", sumCost : CalculationSumCost(showCardName(5)), tip : "线下用支付宝买单每笔送20M国内流量,根据支付宝会员等级划分每月最高送若干(12/15/18/20)笔流量;<br/>首月免月租,首充19元得50元;<br/>激活当月及次月各送1G国内流量;<br/>6个月后套餐含150分钟通话、2.5G国内流量;<br/>一年后或预存200元后套餐含200分钟通话、3G国内流量"},
+            { cardGroup : "支付宝", cardName : "芝麻冰淇淋信用套餐(月租199元,通话时间不限,流量不限", sumCost : CalculationSumCost(showCardName(6)), tip : "首月资费0月租,0.15/分钟,15元/G"},
+            { cardGroup : "支付宝", cardName : "流量红包卡<br/>月租9元,含300M国内流量;<br/>国内流量15元/G,0.15元/分钟", sumCost : CalculationSumCost(showCardName(7)), tip : "套餐外消费返还50%至支付宝余额中;<br/>首月免月租"},
+            { cardGroup : "支付宝", cardName : "视频红包卡<br/>月租9元;<br/>国内流量15元/G,0.15元/分钟", sumCost : CalculationSumCost(showCardName(8)), tip : "优酷省内免流;<br/>套餐外消费返还50%至支付宝余额中;<br/>首月免月租"},
+            { cardGroup : "飞猪", cardName : "飞猪小卡<br/>月租19元,含2G国内流量;<br/>国内流量15元/G,0.1元/分钟,国际流量25元/天;", sumCost : CalculationSumCost(showCardName(9)), tip : "每充值100元送25元国际专款;<br/>双十一期间存200元送100元以及100元国际专款;<br/>首月免月租"},
+            { cardGroup : "飞猪", cardName : "飞猪大卡<br/>月租39元,含100分钟通话、3G国内流量;<br/>国内流量10元/G,0.1元/分钟", sumCost : CalculationSumCost(showCardName(10)), tip : "每充值100元送25元国际专款;<br/>双十一期间存200元送100元以及100元国际专款;<br/>首月免月租"},
+            { cardGroup : "淘宝", cardName : "畅淘卡<br/>月租56元,含300分钟通话、3G国内流量;<br/>国内流量10元/G,0.1元/分钟", sumCost : CalculationSumCost(showCardName(11)), tip : "手机淘宝购物看直播等送流量;<br/>联通用户无需办理;<br/>首月免月租,首充50元及以上送50元"},
+            { cardGroup : "钉钉", cardName : "银卡<br/>月租29元,含50分钟通话、750M国内流量、750M省内流量;<br/>国内流量0.1元/M,0.1元/分钟", sumCost : CalculationSumCost(showCardName(12)), tip : "套餐还包含50分钟钉钉普通电话、根据企业等级划分还包含若干国内流量(100M/200M/500M)以及智能办公电话通话时长(100/200/300分钟);<br/>首月免月租,首充100元得200元"},
+            { cardGroup : "钉钉", cardName : "金卡<br/>月租49元,含175分钟通话、1.5G国内流量、1.5G省内流量;<br/>国内流量0.1元/M,0.1元/分钟", sumCost : CalculationSumCost(showCardName(13)), tip : "套餐还包含175分钟钉钉普通电话、根据企业等级划分还包含若干国内流量（500M/1G/1.5G）以及智能办公电话通话时长(100/200/300分钟);<br/>首月免月租,首充100元得200元"},
+            { cardGroup : "钉钉", cardName : "钻石卡<br/>月租99元,含500分钟通话、4G国内流量、4G省内流量;<br/>国内流量0.1元/M,0.1元/分钟", sumCost : CalculationSumCost(showCardName(14)), tip : "套餐还包含500分钟钉钉普通电话、根据企业等级划分还包含若干国内流量(1G/2G/3G)以及智能办公电话通话时长(100/200/300分钟);<br/>首月免月租,首充100元得200元"},
+            { cardGroup : "京东", cardName : "小强卡<br/>月租16元,含1G国内流量;<br/>国内流量15元/G,0.1元/分钟", sumCost : CalculationSumCost(showCardName(15)), tip : "京东购物笔笔送流量,每月最多送10笔,根据京东会员等级划分,每笔送若干(站内任意支付或站外京东支付50M/站内任意支付200M或站外京东支付50M/站内或站外京东支付200M/站内非京东支付50M)国内流量;<br/>首月免月租,首充100元得200元"},
+            { cardGroup : "京东", cardName : "大强卡<br/>月租56元,含300分钟通话、3G国内流量;<br/>国内流量10元/G,0.1元/分钟", sumCost : CalculationSumCost(showCardName(16)), tip : "京东购物笔笔送流量,每月最多送10笔,根据京东会员等级划分,每笔送若干(站内任意支付或站外京东支付50M/站内任意支付200M或站外京东支付50M/站内或站外京东支付200M/站内非京东支付50M)国内流量;<br/>首月免月租,首充100元得200元"},
+            { cardGroup : "京东", cardName : "红包卡<br/>月租9元,含300M国内流量;<br/>国内流量15元/G,0.15元/分钟", sumCost : CalculationSumCost(showCardName(17)), tip : "套餐外消费返还50%至京东账户中;<br/>首月免月租"},
+            { cardGroup : "百度", cardName : "小神卡<br/>月租28元,含100分钟通话、1G国内流量;<br/>国内流量15元/G,0.1元/分钟", sumCost : CalculationSumCost(showCardName(18)), tip : "百度地图每连续签到3天送50M国内流量;<br/>百度糯米每笔消费送50M流量,客户端签到每天送2M流量;<br/>首月免月租,首充100元得200元"},
+            { cardGroup : "百度", cardName : "女神卡<br/>月租37元,含200分钟通话、1G国内流量;<br/>国内流量10元/G,0.1元/分钟", sumCost : CalculationSumCost(showCardName(19)), tip : "百度地图每连续签到3天送50M国内流量;<br/>百度糯米每笔消费送50M流量,客户端签到每天送2M流量;<br/>情人节/女生节/七夕/圣诞节流量全免并赠送百度糯米白金会员;<br/>首月免月租,首充50元得100元"},
+            { cardGroup : "百度", cardName : "大神卡<br/>月租198元,含1000分钟通话、20G国内流量;<br/>国内流量10元/G,0.1元/分钟", sumCost : CalculationSumCost(showCardName(20)), tip : "百度地图每连续签到3天送50M国内流量;<br/>百度糯米每笔消费送50M流量,客户端签到每天送2M流量;<br/>首月套餐不生效,免费体验3G国内流量以及300分钟通话,首充100元得200元"},
+            { cardGroup : "百度", cardName : "小圣卡<br/>月租9元;<br/>省内流量1元/800M,国内流量15元/G,0.1元/分钟", sumCost : CalculationSumCost(showCardName(21)), tip : "手机百度/爱奇艺/百度地图/百度贴吧免流;<br/>首月免月租,首充50元得100元,6个月内每月送100分钟通话"},
+            { cardGroup : "百度", cardName : "大圣卡<br/>月租19元,含100分钟通话、1G国内流量;<br/>省内流量1元/800M,国内流量10元/G,0.1元/分钟", sumCost : CalculationSumCost(showCardName(22)), tip : "手机百度/爱奇艺/百度地图/百度贴吧免流;<br/>首月免月租,首充50元得100元,6个月内每月送100分钟通话"},
+            { cardGroup : "百度", cardName : "超圣卡<br/>月租59元,含300分钟通话、4G国内流量;<br/>省内流量1元/800M,国内流量10元/G,0.1元/分钟", sumCost : CalculationSumCost(showCardName(23)), tip : "手机百度/爱奇艺/百度地图/百度贴吧免流;<br/>首月免月租,首充50元得100元,6个月内每月送100分钟通话"},
+            { cardGroup : "小米", cardName : "29元套餐米粉卡<br/>月租29元,含2G国内流量;<br/>国内流量10元/G,0.1元/分钟", sumCost : CalculationSumCost(showCardName(24)), tip : "每月在MIUI内使用小米APP产生的流量次月全部返还;<br/>首月免月租,首充100元送50元话费+50元小米商城现金券;<br/>送6个月小米云服务会员"},
+            { cardGroup : "小米", cardName : "59元套餐米粉卡<br/>月租59元,含200分钟通话、4G国内流量;<br/>国内流量10元/G,0.1元/分钟", sumCost : CalculationSumCost(showCardName(25)), tip : "每月在MIUI内使用小米APP产生的流量次月全部返还;<br/>首月免月租,首充100元送50元话费+50元小米商城现金券;<br/>送6个月小米云服务会员"},
+            { cardGroup : "小米", cardName : "1元日租米粉卡<br/>月租5元;<br/>省内流量1元/500M,国内流量15元/G,0.1元/分钟", sumCost : CalculationSumCost(showCardName(26)), tip : "即将升级为省内1元/800M,省外2元800M"},
+            { cardGroup : "小米", cardName : "不限量日租米粉卡<br/>月租5元;<br/>省内流量3元不限量,国内流量15元/G,0.1元/分钟", sumCost : CalculationSumCost(showCardName(27)), tip : "即将升级为省内1元/800M,省外2元800M"},
+            { cardGroup : "新浪微博", cardName : "V+卡<br/>月租19元,含1G国内流量;<br/>国内流量12元/G,0.1元/分钟", sumCost : CalculationSumCost(showCardName(28)), tip : "新浪微博免流;<br/>首月免月租,当月及次月每月送500M国内流量,首充50得100元"},
+            { cardGroup : "新浪微博", cardName : "大V卡<br/>月租69元,含300分钟通话、3G国内流量;<br/>国内流量10元/G,0.1元/分钟", sumCost : CalculationSumCost(showCardName(29)), tip : "新浪微博免流;<br/>首月免月租,当月及次月每月送500M国内流量,首充50得100元"},
+            { cardGroup : "新浪微博", cardName : "金V卡<br/>月租199元,含1000分钟通话、20G国内流量;<br/>国内流量10元/G,0.1元/分钟", sumCost : CalculationSumCost(showCardName(30)), tip : "新浪微博免流;<br/>首月套餐不生效,免费体验3G国内流量以及300分钟通话,首充50得100元"},
+            { cardGroup : "哔哩哔哩", cardName : "22卡<br/>月租22元,含1G国内流量;<br/>省内流量1元/500M,省外2元/500M,0.1元/分钟", sumCost : CalculationSumCost(showCardName(31)), tip : "哔哩哔哩免流;<br/>赠送1个B坷垃、133个辣条;<br/>首月免月租,6个月内每月送100分钟通话,首充50得100元"},
+            { cardGroup : "哔哩哔哩", cardName : "33卡<br/>月租33元,含2G国内流量;<br/>省内流量1元/500M,省外2元/500M,0.1元/分钟", sumCost : CalculationSumCost(showCardName(32)), tip : "哔哩哔哩免流;<br/>赠送2个B坷垃、10个亿圆、33个辣条;<br/>首月免月租,6个月内每月送100分钟通话,首充50得100元"},
+            { cardGroup : "哔哩哔哩", cardName : "小电视卡<br/>月租66元,含200分钟通话、4G国内流量;<br/>省内流量1元/500M,省外2元/500M,0.1元/分钟", sumCost : CalculationSumCost(showCardName(33)), tip : "哔哩哔哩免流;<br/>赠送2个B坷垃、33个亿圆、233个辣条;<br/>首月免月租,6个月内每月送100分钟通话,首充50得100元"},
+            { cardGroup : "映客直播", cardName : "小映卡<br/>月租29元,含1G国内流量;<br/>省内流量1元/500M,省外2元/500M,0.1元/分钟", sumCost : CalculationSumCost(showCardName(34)), tip : "万钻抽奖1次,映客经验1000、个性头衔15天;<br/>首月免月租,6个月内每月送1G国内流量,首充50得100元"},
+            { cardGroup : "映客直播", cardName : "大映卡<br/>月租59元,含200分钟通话、3G国内流量;<br/>省内流量1元/500M,省外2元/500M,0.1元/分钟", sumCost : CalculationSumCost(showCardName(35)), tip : "万钻抽奖3次、映客经验3000、个性头衔30天;<br/>首月免月租,6个月内每月送1G国内流量,首充50得100元"},
+            { cardGroup : "花椒直播", cardName : "小花椒卡<br/>月租29元,含2G国内流量;<br/>省内流量1元/500M,省外1元/100M,0.1元/分钟", sumCost : CalculationSumCost(showCardName(36)), tip : "1000经验值、1000阳光值、1次百万花椒豆抽奖机会;<br/>首月免月租,6个月内每月送1G国内流量,首充50得100元"},
+            { cardGroup : "花椒直播", cardName : "大花椒卡<br/>月租59元,含200分钟通话、4G国内流量;<br/>省内流量1元/500M,省外1元/100M,0.1元/分钟", sumCost : CalculationSumCost(showCardName(37)), tip : "1500经验值、1500阳光值、3次百万花椒豆抽奖机会;<br/>首月免月租,6个月内每月送1G国内流量,首充50得100元"},
+            { cardGroup : "花椒直播", cardName : "花粉卡<br/>月租10元;<br/>省内流量2元/2G,省外0.1元/M,0.1元/分钟", sumCost : CalculationSumCost(showCardName(38)), tip : "首月免月租,送1G国内流量,首充50得100元"},
+            { cardGroup : "优酷土豆", cardName : "小酷卡<br/>月租9元;<br/>省内流量1元/500M,省外3元/500M,0.1元/分钟", sumCost : CalculationSumCost(showCardName(39)), tip : "优酷、微博免流;<br/>首月免月租,首充50得100元"},
+            { cardGroup : "优酷土豆", cardName : "大酷卡<br/>月租29元,含2G国内流量;<br/>省内流量1元/500M,省外2元/500M,0.1元/分钟", sumCost : CalculationSumCost(showCardName(40)), tip : "优酷、微博免流;<br/>首月免月租,首充50得100元"},
+            { cardGroup : "芒果TV", cardName : "小芒卡<br/>月租9元;<br/>省内流量1元/500M,省外1元/100M,0.1元/分钟", sumCost : CalculationSumCost(showCardName(41)), tip : "芒果TV免流;<br/>首月免月租,6个月内每月送100分钟通话,首充50得80元话费以及2个月芒果会员/首充100得150元话费以及5个月芒果会员"},
+            { cardGroup : "芒果TV", cardName : "大芒卡<br/>月租29元,含2G国内流量;<br/>省内流量1元/500M,省外1元/100M,0.1元/分钟", sumCost : CalculationSumCost(showCardName(42)), tip : "芒果TV免流;<br/>首月免月租,6个月内每月送100分钟通话,首充50得80元话费以及2个月芒果会员/首充100得150元话费以及5个月芒果会员"},
+            { cardGroup : "工商银行", cardName : "梦想e卡<br/>月租19元,含2G国内流量;<br/>国内流量10元/G,0.1元/分钟", sumCost : CalculationSumCost(showCardName(43)), tip : "工行指定APP免流;<br/>首月免月租,6个月内每月送100分钟通话,首充50得100元"},
+            { cardGroup : "工商银行", cardName : "大e卡<br/>月租89元,含600分钟通话、6G国内流量;<br/>国内流量10元/G,0.1元/分钟", sumCost : CalculationSumCost(showCardName(44)), tip : "工行指定APP免流;<br/>首月免月租,6个月内每月送100分钟通话,首充50得100元"},
+            { cardGroup : "招商银行", cardName : "小招卡<br/>月租36元,含100分钟通话、2G国内流量;<br/>国内流量10元/G,0.1元/分钟", sumCost : CalculationSumCost(showCardName(45)), tip : "首月免月租,当月及次月每月送1G国内流量,首充50得100元"},
+            { cardGroup : "招商银行", cardName : "大招卡<br/>月租96元,含600分钟通话、6G国内流量;<br/>国内流量10元/G,0.1元/分钟", sumCost : CalculationSumCost(showCardName(46)), tip : "首月免月租,当月及次月每月送1G国内流量,首充50得100元"},
+            { cardGroup : "浦发银行", cardName : "小发卡<br/>月租36元,含100分钟通话、2G国内流量;<br/>国内流量10元/G,0.1元/分钟", sumCost : CalculationSumCost(showCardName(47)), tip : "首月免月租,首充50得100元"},
+            { cardGroup : "浦发银行", cardName : "大发卡<br/>月租96元,含600分钟通话、6G国内流量;<br/>国内流量10元/G,0.1元/分钟", sumCost : CalculationSumCost(showCardName(48)), tip : "首月免月租,首充50得100元"},
+            { cardGroup : "华夏银行", cardName : "小夏卡<br/>月租36元,含3G国内流量;<br/>国内流量10元/G,0.1元/分钟", sumCost : CalculationSumCost(showCardName(49)), tip : "首月免月租,当月送50分钟通话,首充50得100元"},
+            { cardGroup : "华夏银行", cardName : "大夏卡<br/>月租56元,含100分钟通话、5G国内流量;<br/>国内流量10元/G,0.1元/分钟", sumCost : CalculationSumCost(showCardName(50)), tip : "首月免月租,当月送50分钟通话,首充50得100元"},
+            { cardGroup : "招联金融", cardName : "招联牛卡<br/>月租39元,含150分钟通话、2G国内流量;<br/>国内流量10元/G,0.1元/分钟", sumCost : CalculationSumCost(showCardName(51)), tip : "APP内每签到5次送100M国内流量;<br/>每月按期还款送500M国内流量;首月免月租,送1G国内流量,首充50得100元"},
+            { cardGroup : "同花顺", cardName : "小顺卡<br/>月租28元,含2G国内流量;<br/>国内流量10元/G,0.1元/分钟", sumCost : CalculationSumCost(showCardName(52)), tip : "3个月同花顺沪深level2会员;<br/>首月免月租,当月及次月每月送500M国内流量,首充50得100元"},
+            { cardGroup : "同花顺", cardName : "大顺卡<br/>月租58元,含300分钟通话、3G国内流量;<br/>国内流量10元/G,0.1元/分钟", sumCost : CalculationSumCost(showCardName(53)), tip : "3个月同花顺沪深level2会员;<br/>首月免月租,当月及次月每月送500M国内流量,首充50得100元"},
+            { cardGroup : "同花顺", cardName : "天顺卡<br/>月租118元,含800分钟通话、8G国内流量;<br/>国内流量10元/G,0.1元/分钟", sumCost : CalculationSumCost(showCardName(54)), tip : "3个月同花顺沪深level2会员;<br/>首月免月租,当月及次月每月送500M国内流量,首充50得100元"},
+            { cardGroup : "滴滴", cardName : "mini橙卡<br/>月租26元,含2G国内流量;<br/>国内流量10元/G,0.1元/分钟", sumCost : CalculationSumCost(showCardName(55)), tip : "每次打车送50M国内流量,根据滴滴会员等级划分每月最多送(10/20/40次);<br/>首月免月租,6个月内每月送100分钟通话,首充50得100元"},
+            { cardGroup : "滴滴", cardName : "小橙卡<br/>月租56元,含300分钟通话、3G国内流量;<br/>国内流量10元/G,0.1元/分钟", sumCost : CalculationSumCost(showCardName(56)), tip : "每次打车送50M国内流量,根据滴滴会员等级划分每月最多送(10/20/40次);<br/>首月免月租,当月及次元每月送500M国内流量,首充50得100元"},
+            { cardGroup : "滴滴", cardName : "大橙卡<br/>月租96元,含600分钟通话、6G国内流量;<br/>国内流量10元/G,0.1元/分钟", sumCost : CalculationSumCost(showCardName(57)), tip : "每次打车送50M国内流量,根据滴滴会员等级划分每月最多送(10/20/40次);<br/>首月免月租,当月及次元每月送500M国内流量,首充50得100元"},
+            { cardGroup : "滴滴", cardName : "小王卡<br/>月租58元,含500分钟通话、1G国内流量、2G省内流量;<br/>国内流量0.1元/M,0.1元/分钟", sumCost : CalculationSumCost(showCardName(58)), tip : "客户端内与乘客通话费用全免;<br/>首月免月租,首充100得200元"},
+            { cardGroup : "滴滴", cardName : "大王卡<br/>月租98元,含1000分钟通话、2G国内流量、4G省内流量;<br/>国内流量0.1元/M,0.1元/分钟", sumCost : CalculationSumCost(showCardName(59)), tip : "客户端内与乘客通话费用全免;<br/>首月免月租,首充100得200元"},
+            { cardGroup : "今日头条", cardName : "懂我卡<br/>月租29元,含2G国内流量;<br/>国内流量10元/G,0.1元/分钟", sumCost : CalculationSumCost(showCardName(60)), tip : "今日头条免流;<br/>首月免月租,送100分钟通话,首充50得100元"},
+            { cardGroup : "今日头条", cardName : "懂我卡Plus<br/>月租59元,含200分钟通话、4G国内流量;<br/>国内流量10元/G,0.1元/分钟", sumCost : CalculationSumCost(showCardName(61)), tip : "今日头条免流;<br/>首月免月租,送100分钟通话,首充50得100元"},
+            { cardGroup : "天翼资讯", cardName : "看看卡<br/>月租6元;<br/>省内流量1元/500M,国内流量0.1元/M,0.1元/分钟", sumCost : CalculationSumCost(showCardName(62)), tip : "天翼视讯免流;<br/>首月免月租,送1G国内流量"},
+            { cardGroup : "饿了么", cardName : "小饿卡<br/>月租56元,含300分钟通话、3G国内流量;<br/>国内流量10元/G,0.1元/分钟", sumCost : CalculationSumCost(showCardName(63)), tip : "每单外卖送50M国内流量,每月最多送10笔;<br/>首月免月租,首充50得100元"},
+            { cardGroup : "饿了么", cardName : "大饿卡<br/>月租96元,含600分钟通话、6G国内流量;<br/>国内流量10元/G,0.1元/分钟", sumCost : CalculationSumCost(showCardName(64)), tip : "每单外卖送50M国内流量,每月最多送10笔;<br/>首月免月租,首充50得100元"},
+            { cardGroup : "饿了么", cardName : "蜂鸟卡<br/>月租56元,含400分钟通话、1G国内流量、2G省内流量、100条短信;<br/>国内流量10元/G,0.1元/分钟", sumCost : CalculationSumCost(showCardName(65)), tip : "蜂鸟APP内与订餐用户通话全免;<br/>完成APP内指定任务另送若干国内流量;<br/>首月免月租,3个月内每月送1G国内流量,首充50得100元"},
+            { cardGroup : "饿了么", cardName : "蜂王卡<br/>月租96元,含1000分钟通话、2G国内流量、4G省内流量、200条短信;<br/>国内流量10元/G,0.1元/分钟", sumCost : CalculationSumCost(showCardName(66)), tip : "蜂鸟APP内与订餐用户通话全免;<br/>完成APP内指定任务另送若干国内流量;<br/>首月免月租,3个月内每月送1G国内流量,首充50得100元"},
+            { cardGroup : "美团", cardName : "小美卡<br/>月租36元,含100分钟通话、2G国内流量;<br/>国内流量10元/G,0.1元/分钟", sumCost : CalculationSumCost(showCardName(67)), tip : "每次通过银行卡快捷支付送50M国内流量,每月最多送10笔;<br/>首月免月租,首充50得100元"},
+            { cardGroup : "美团", cardName : "大美卡<br/>月租96元,含600分钟通话、6G国内流量;<br/>国内流量10元/G,0.1元/分钟", sumCost : CalculationSumCost(showCardName(68)), tip : "每次通过银行卡快捷支付送50M国内流量,每月最多送10笔;<br/>首月免月租,首充50得100元"},
+            { cardGroup : "运满满", cardName : "小满卡<br/>月租56元,含400分钟通话、2G国内流量;<br/>国内流量10元/G,0.1元/分钟", sumCost : CalculationSumCost(showCardName(69)), tip : "运满满APP内与货主通话全免;<br/>首月免月租,首充50得100元"},
+            { cardGroup : "运满满", cardName : "大满卡<br/>月租96元,含800分钟通话、5G国内流量;<br/>国内流量10元/G,0.1元/分钟", sumCost : CalculationSumCost(showCardName(70)), tip : "运满满APP内与货主通话全免;<br/>首月免月租,首充50得100元"},
+            { cardGroup : "蜗牛游戏", cardName : "小蜗牛卡<br/>月租19元,含1.5G国内流量;<br/>省内流量1元/500M,省外12元/G,0.1元/分钟", sumCost : CalculationSumCost(showCardName(71)), tip : "参与游戏活动可额外获得1G国内流量;<br/>首月免月租,首充50得100元"},
+            { cardGroup : "蜗牛游戏", cardName : "大蜗牛卡<br/>月租59元,含200分钟通话、4G国内流量;<br/>省内流量1元/500M,省外10元/G,0.1元/分钟", sumCost : CalculationSumCost(showCardName(72)), tip : "参与游戏活动可额外获得1G国内流量;<br/>首月免月租,首充50得100元"},
+            { cardGroup : "各大视频", cardName : "畅视20元卡<br/>月租20元;<br/>国内流量15元/G,0.1元/分钟", sumCost : CalculationSumCost(showCardName(73)), tip : "优酷/乐视/BesTV/沃视频/搜狐/华数手机电视/CIBN手机电视等APP标清视频免流"},
+            { cardGroup : "各大视频", cardName : "畅视50元卡<br/>月租50元,含3G国内流量;<br/>国内流量15元/G,0.1元/分钟", sumCost : CalculationSumCost(showCardName(74)), tip : "优酷/乐视/BesTV/沃视频/搜狐/华数手机电视/CIBN手机电视等APP标清视频免流"}, 
+            { cardGroup : "顺丰", cardName : "大丰卡<br/>月租46元,含100分钟通话、4G国内流量;<br/>国内流量10元/G,0.1元/分钟", sumCost : CalculationSumCost(showCardName(75)), tip : "每次收发顺丰快递送100M国内流量,每月最多送10笔;<br/>送顺丰钻石会员;<br/>首月免月租,首充50元及以上送价值35元的顺丰快递券"}, 
+            { cardGroup : "优酷/爱奇艺/乐视/PPTV/今日头条", cardName : "酷视卡/爱享卡/小乐卡/聚力卡/关心卡<br/>月租9元;<br/>省内流量1元/500M,省外0.1元/M,0.1元/分钟", sumCost :CalculationSumCost(showCardName(76)), tip : "优酷/爱奇艺/乐视/PPTV/今日头条等APP省内免流;<br/>首月免月租,送1G国内流量"}
          ];
          // Creation of first grid store
          let gridStore = Ext.create('Ext.data.Store', {
@@ -419,16 +464,19 @@
                     header: "合作方",
                     dataIndex: 'cardGroup',	
                     id : 'cardGroup',    
-                    flex:  1,  		 // defines the amount of space this column is going to take in the grid container with respect to all.	
+                    flex: 1.5,  		 // defines the amount of space this column is going to take in the grid container with respect to all.	
                     sortable: false, // to sort grid column data. 
                     hideable: true  // which allows column to be hidden run time on user request.
                 },{
                     header: "卡名", 
                     dataIndex: 'cardName',
-                    flex: 1, 
+                    flex: 2, 
                     sortable: false,
-                    hideable: false // this column will not be available to be hidden.
-                },{
+                    hideable: false ,
+                    renderer: function (value, metadata, record, rowIndex, colIndex, store) {
+                         return '<div style="white-space:normal;">' + value + '</div>';     
+                    } 
+                }/*,{
                     header: "月租",
                     dataIndex: 'baseCost',
                     flex: .5, 
@@ -482,16 +530,24 @@
                   	renderer :  function (value, metadata, record, rowIndex, colIndex, store) {
                       return CalculationCallCost(showCardName(rowIndex));
                   	}
-          		  },{
+          		  }*/,{
         	          header: "总费用",
         	          dataIndex: 'sumCost',
         	          flex: .5, 
-        	          sortable: false, 
+        	          sortable: true/*, 
         	          // renderer is used to manipulate data based on some conditions here who ever has marks greater than 75 will be displayed as 'Distinction' else 'Non Distinction'.
-        	          renderer :  function (value, metadata, record, rowIndex, colIndex, store) {
-                      return CalculationSumCost(showCardName(rowIndex));
-        	          }
-        	   	  }]
+        	          renderer :  function (value, metadata, record, rowIndex, colIndex, store) { 
+                      return value;
+        	          }*/
+        	   	  },{
+                    header: "备注", 
+                    dataIndex: 'tip',
+                    flex: 4, 
+                    sortable: false,
+                    renderer: function (value, metadata, record, rowIndex, colIndex, store) {
+                         return '<div style="white-space:normal;">' + value + '</div>';     
+                    } 
+                }]
           });
       });
    </script>
