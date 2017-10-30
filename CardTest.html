@@ -4,7 +4,14 @@
    <link href="https://cdnjs.cloudflare.com/ajax/libs/extjs/6.0.0/classic/theme-triton/resources/theme-triton-all.css" rel="stylesheet" />
    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/extjs/6.0.0/ext-all.js"></script>
    <style>
-     * { touch-action: manipulation; }
+     * { 
+      /* touch-action: manipulation;  */
+      pointer-events: none;
+     }
+
+     #sum_cost{
+      pointer-events: auto;
+     }
    </style>
    <script type="text/javascript">
    
@@ -536,6 +543,7 @@
           		  }*/,{
         	          header: "总费用",
         	          dataIndex: 'sumCost',
+                    id : 'sum_cost',
         	          flex: .5, 
         	          sortable: true/*, 
         	          // renderer is used to manipulate data based on some conditions here who ever has marks greater than 75 will be displayed as 'Distinction' else 'Non Distinction'.
