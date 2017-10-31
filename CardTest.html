@@ -481,11 +481,14 @@
                     id : 'cardGroup',    
                     flex: 1,  		 // defines the amount of space this column is going to take in the grid container with respect to all.	
                     sortable: false, // to sort grid column data. 
-                    hideable: true  // which allows column to be hidden run time on user request.
+                    hideable: true,  
+                    renderer: function (value, metadata, record, rowIndex, colIndex, store) {
+                         return '<div style="white-space:normal;">' + value + '</div>';     
+                    } 
                 },{
                     header: "卡名", 
                     dataIndex: 'cardName',
-                    flex: 2.5, 
+                    flex: 2, 
                     sortable: false,
                     hideable: false ,
                     renderer: function (value, metadata, record, rowIndex, colIndex, store) {
@@ -549,7 +552,7 @@
         	          header: "总费用",
         	          dataIndex: 'sumCost',
                     id : 'sum_cost',
-        	          flex: .5, 
+        	          flex: 0.5, 
         	          sortable: true/*, 
         	          // renderer is used to manipulate data based on some conditions here who ever has marks greater than 75 will be displayed as 'Distinction' else 'Non Distinction'.
         	          renderer :  function (value, metadata, record, rowIndex, colIndex, store) { 
@@ -558,7 +561,7 @@
         	   	  },{
                     header: "备注", 
                     dataIndex: 'tip',
-                    flex: 4, 
+                    flex: 3.5, 
                     sortable: false,
                     renderer: function (value, metadata, record, rowIndex, colIndex, store) {
                          return '<div style="white-space:normal;">' + value + '</div>';     
