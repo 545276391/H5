@@ -1,0 +1,10 @@
+diff a/CardTest.html b/CardTest.html	(rejected hunks)
+@@ -552,7 +552,7 @@
+         	          header: "总费用",
+         	          dataIndex: 'sumCost',
+                     id : 'sum_cost',
+-        	          flex: 0.5, 
++        	          flex: 1, 
+         	          sortable: true/*, 
+         	          // renderer is used to manipulate data based on some conditions here who ever has marks greater than 75 will be displayed as 'Distinction' else 'Non Distinction'.
+         	          renderer :  function (value, metadata, record, rowIndex, colIndex, store) { 
