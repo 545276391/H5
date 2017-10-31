@@ -161,6 +161,7 @@
   let media_app_50_card = new Card(50,0,3,0,15,15,0.1,MONTHLY);
   let sf_big_feng_card = new Card(46,0,4,100,10,10,0.1,MONTHLY);
 	let media_information_app_card = new Card(9,0,0,0,1,100,0.1,DAILY);
+  let other_card = new Card(9,0,0,0,1,2,0.1,DAILY);
 
   function showCardName(index){
       switch(index){
@@ -318,6 +319,8 @@
           return sf_big_feng_card;
         case 76:
           return media_information_app_card;
+        case 77:
+          return other_card;
         default:
           return "?";
       }
@@ -448,7 +451,8 @@
             { cardGroup : "各大视频", cardName : "畅视20元卡<br/>月租20元;<br/>国内流量15元/G,0.1元/分钟", sumCost : CalculationSumCost(showCardName(73)), tip : "优酷/乐视/BesTV/沃视频/搜狐/华数手机电视/CIBN手机电视等APP标清视频免流"},
             { cardGroup : "各大视频", cardName : "畅视50元卡<br/>月租50元,含3G国内流量;<br/>国内流量15元/G,0.1元/分钟", sumCost : CalculationSumCost(showCardName(74)), tip : "优酷/乐视/BesTV/沃视频/搜狐/华数手机电视/CIBN手机电视等APP标清视频免流"}, 
             { cardGroup : "顺丰", cardName : "大丰卡<br/>月租46元,含100分钟通话、4G国内流量;<br/>国内流量10元/G,0.1元/分钟", sumCost : CalculationSumCost(showCardName(75)), tip : "每次收发顺丰快递送100M国内流量,每月最多送10笔;<br/>送顺丰钻石会员;<br/>首月免月租,首充50元及以上送价值35元的顺丰快递券"}, 
-            { cardGroup : "优酷/爱奇艺/乐视/PPTV/今日头条", cardName : "酷视卡/爱享卡/小乐卡/聚力卡/关心卡<br/>月租9元;<br/>省内流量1元/500M,省外0.1元/M,0.1元/分钟", sumCost :CalculationSumCost(showCardName(76)), tip : "优酷/爱奇艺/乐视/PPTV/今日头条等APP省内免流;<br/>首月免月租,送1G国内流量"}
+            { cardGroup : "优酷/爱奇艺/乐视/PPTV/今日头条", cardName : "酷视卡/爱享卡/小乐卡/聚力卡/关心卡<br/>月租9元;<br/>省内流量1元/500M,省外0.1元/M,0.1元/分钟", sumCost :CalculationSumCost(showCardName(76)), tip : "优酷/爱奇艺/乐视/PPTV/今日头条等APP省内免流;<br/>首月免月租,送1G国内流量"},
+            { cardGroup : "未完待续...", cardName : "未完待续...(天国的小王卡)", sumCost :CalculationSumCost(showCardName(77)), tip : "未完待续..."}
          ];
          // Creation of first grid store
          let gridStore = Ext.create('Ext.data.Store', {
@@ -475,13 +479,13 @@
                     header: "合作方",
                     dataIndex: 'cardGroup',	
                     id : 'cardGroup',    
-                    flex: 1.5,  		 // defines the amount of space this column is going to take in the grid container with respect to all.	
+                    flex: 1,  		 // defines the amount of space this column is going to take in the grid container with respect to all.	
                     sortable: false, // to sort grid column data. 
                     hideable: true  // which allows column to be hidden run time on user request.
                 },{
                     header: "卡名", 
                     dataIndex: 'cardName',
-                    flex: 2, 
+                    flex: 2.5, 
                     sortable: false,
                     hideable: false ,
                     renderer: function (value, metadata, record, rowIndex, colIndex, store) {
