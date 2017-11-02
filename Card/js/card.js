@@ -458,7 +458,7 @@ let totalWidth = (document.documentElement.scrollWidth>document.documentElement.
             id                : 'gridId',
             store             : gridStore,
             stripeRows        : true,
-            title             : '联通合作卡资费对比', // Title for the grid
+            title             : '互联网企业与运营商合作卡资费对比', // Title for the grid
             renderTo          :'gridDiv', // Div id where the grid has to be rendered
             width             : totalWidth,
             collapsible       : true, // to collapse grid
