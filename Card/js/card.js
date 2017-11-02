@@ -1,23 +1,4 @@
-
-<!DOCTYPE html>
-<html>
-<head>
-   <link href="https://cdnjs.cloudflare.com/ajax/libs/extjs/6.0.0/classic/theme-triton/resources/theme-triton-all.css" rel="stylesheet" />
-   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/extjs/6.0.0/ext-all.js"></script>
-   <style>
-    * { 
-      /* touch-action: manipulation;  */
-      pointer-events: none;
-      font-size: 15px;
-    }
-
-    #sum_cost{
-      pointer-events: auto;
-    }
-   </style>
-   <script type="text/javascript">
-   
-   let totalWidth = (document.documentElement.scrollWidth>document.documentElement.clientWidth) 
+let totalWidth = (document.documentElement.scrollWidth>document.documentElement.clientWidth) 
 	? document.documentElement.scrollWidth : document.documentElement.clientWidth;//获取屏幕的宽度 
 
   const DAILY = 30;
@@ -582,9 +563,3 @@
                 }]
           });
       });
-   </script>
-</head>
-<body>
-   <div id = "gridDiv"></div>
-</body>
-</html>

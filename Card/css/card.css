@@ -1,0 +1,9 @@
+* { 
+      /* touch-action: manipulation;  */
+      pointer-events: none;
+      font-size: 15px;
+    }
+
+    #sum_cost{
+      pointer-events: auto;
+    }
